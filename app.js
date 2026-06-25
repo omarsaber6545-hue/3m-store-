@@ -1,187 +1,348 @@
 /* ==========================================================================
-   3M STUDIO - PREMIUM WEB ENGINE & VISUAL LIVE EDITOR
+   3M STUDIO - PREMIUM WEB ENGINE & VISUAL LIVE EDITOR (LOCALIZED)
    ========================================================================== */
 
-// --- Default Base State (Out of the box premium experience) ---
+// --- Default Base State (Multi-lingual & Multi-currency database) ---
 const DEFAULT_STATE = {
     theme: {
         primaryColor: "#00f2fe",
         secondaryColor: "#7f00ff",
         bgDark: "#050508"
     },
-    texts: {
-        nav_logo: "3M",
-        nav_logo_sub: "STUDIO",
-        hero_badge: "PREMIUM GAMING AGENCY",
-        hero_title_p1: "Build Your Dream",
-        hero_title_p2: "Project With 3M Studio",
-        hero_subtitle: "Professional Roblox Development, Discord Services and Website Creation. Turn your ideas into digital reality.",
-        hero_btn_1: "Get Started",
-        hero_btn_2: "View Services",
-        services_section_title: "What We Specialize In",
-        services_section_subtitle: "We deliver premium-grade gaming community setups, custom scripts, store products, and professional web solutions.",
-        portfolio_section_title: "Showcase of Our Works",
-        portfolio_section_subtitle: "Explore some of our latest Roblox builds, scripting systems, Discord communities, and sleek website layouts.",
-        why_section_title: "Why Choose Our Agency?",
-        why_section_subtitle: "We combine gaming culture expertise with high-level technical development to craft unbeatable solutions.",
-        testimonials_section_title: "What Clients Say",
-        testimonials_section_subtitle: "Read verified testimonials from server owners, game creators, and community managers who trust 3M Studio.",
-        faq_section_title: "Frequently Asked Questions",
-        faq_section_subtitle: "Got questions? We have answers. Find quick answers about ordering, custom bots, delivery times, and more.",
-        contact_section_title: "Start Your Project Journey",
-        contact_section_subtitle: "Ready to take your game or server to the next level? Fill out the form, and our representatives will reach out in less than 24 hours.",
-        contact_email: "contact@3mstudio.gg",
-        contact_discord: "discord.gg/3mstudio",
-        contact_hours: "24 / 7 Response Time",
-        contact_socials_title: "Follow Our Community",
-        footer_logo: "3M",
-        footer_logo_sub: "STUDIO",
-        footer_pitch: "Professional Roblox development, Discord configurations, and web apps tailored for gaming communities.",
-        footer_col_1_title: "Quick Links",
-        footer_col_2_title: "Services",
-        footer_col_3_title: "Legal",
-        footer_copy: "3M Studio"
-    },
     sectionOrder: ["hero", "services", "portfolio", "why-choose-us", "statistics", "testimonials", "faq", "contact"],
-    whyChooseUs: [
-        { id: "why-1", title: "Fast Delivery", desc: "We value your time. Most setups and scripts are completed in 3-5 days.", icon: "zap" },
-        { id: "why-2", title: "Professional Team", desc: "Experienced Roblox developers, web programmers, and Discord engineers.", icon: "users" },
-        { id: "why-3", title: "Affordable Prices", desc: "Premium quality gaming services priced to fit your project budget.", icon: "dollar-sign" },
-        { id: "why-4", title: "24/7 Support", desc: "Our ticket operators and support bots are available round the clock.", icon: "help-circle" },
-        { id: "why-5", title: "Secure Payments", desc: "Full safety assurance through reliable escrow, Stripe, or Robux payments.", icon: "shield" }
+    ar: {
+        texts: {
+            nav_logo: "3M",
+            nav_logo_sub: "STUDIO",
+            hero_badge: "وكالة ألعاب احترافية",
+            hero_title_p1: "ابنِ مشروع",
+            hero_title_p2: "أحلامك مع 3M Studio",
+            hero_subtitle: "تطوير روبلوكس احترافي، إعداد سيرفرات ديسكورد وإنشاء مواقع ويب. حوّل أفكارك إلى واقع رقمي.",
+            hero_btn_1: "ابدأ الآن",
+            hero_btn_2: "عرض الخدمات",
+            services_section_title: "ما نتخصص فيه",
+            services_section_subtitle: "نقدم إعدادات مجتمعات ألعاب احترافية، سكربتات مخصصة، منتجات متاجر وحلول ويب متكاملة.",
+            portfolio_section_title: "معرض أعمالنا الأخيرة",
+            portfolio_section_subtitle: "استكشف بعضًا من أحدث خرائط روبلوكس، أنظمة السكربتات، مجتمعات ديسكورد، وتصميمات المواقع.",
+            why_section_title: "لماذا تختار وكالتنا؟",
+            why_section_subtitle: "نجمع بين ثقافة الألعاب والخبرة التقنية العالية لتقديم حلول لا مثيل لها.",
+            testimonials_section_title: "ماذا يقول عملائنا",
+            testimonials_section_subtitle: "اقرأ تقييمات موثقة من أصحاب السيرفرات، ومطوري الألعاب، ومدراء المجتمعات الذين يثقون بنا.",
+            faq_section_title: "الأسئلة الأكثر شيوعًا",
+            faq_section_subtitle: "لديك أسئلة؟ لدينا إجابات. اعثر على إجابات سريعة حول الطلبات، البوتات، مواعيد التسليم والمزيد.",
+            contact_section_title: "ابدأ رحلة مشروعك",
+            contact_section_subtitle: "هل أنت مستعد لنقل لعبتك أو سيرفرك للمستوى التالي؟ املأ النموذج، وسيتواصل معك فريقنا في أقل من 24 ساعة.",
+            contact_email: "contact@3mstudio.gg",
+            contact_discord: "discord.gg/3mstudio",
+            contact_hours: "دعم متواصل 24/7",
+            contact_socials_title: "تابع مجتمعنا",
+            footer_logo: "3M",
+            footer_logo_sub: "STUDIO",
+            footer_pitch: "تطوير روبلوكس احترافي، إعدادات ديسكورد، ومواقع ويب مخصصة لمجتمعات الألعاب.",
+            footer_col_1_title: "روابط سريعة",
+            footer_col_2_title: "خدماتنا",
+            footer_col_3_title: "قانوني",
+            footer_copy: "3M Studio"
+        },
+        whyChooseUs: [
+            { id: "why-1", title: "تسليم سريع", desc: "نحن نقدر وقتك. يتم الانتهاء من معظم الإعدادات والسكربتات في غضون 3-5 أيام.", icon: "zap" },
+            { id: "why-2", title: "فريق عمل محترف", desc: "مطورون ذوو خبرة في تطوير ألعاب روبلوكس ومبرمجو ويب ومهندسو ديسكورد.", icon: "users" },
+            { id: "why-3", title: "أسعار مناسبة", desc: "خدمات ألعاب متميزة وعالية الجودة بأسعار تتناسب مع ميزانية مشروعك.", icon: "dollar-sign" },
+            { id: "why-4", title: "دعم على مدار الساعة", desc: "فريق الدعم الفني وبوتات المساعدة متاحة دائمًا للإجابة على استفساراتك.", icon: "help-circle" },
+            { id: "why-5", title: "دفع آمن وموثوق", desc: "ضمان أمني كامل من خلال بوابات دفع موثقة أو المعاملات الآمنة.", icon: "shield" }
+        ],
+        testimonials: [
+            { id: "test-1", rating: 5, comment: "قام فريق 3M Studio بتصميم خريطة السيمولاتور ونظام السكربتات الخاص بنا. كان التسليم سريعًا والسكربتات تعمل بدون أي لاج! أنصح بهم بشدة.", name: "TofuuGamer", sub: "منتج ألعاب" },
+            { id: "test-2", rating: 5, comment: "احتاج مجتمع الرياضات الإلكترونية الخاص بنا إلى بوت مخصص لربط حسابات روبلوكس وتتبع الفوز. بوت 3M يعمل بكفاءة ودون انقطاع.", name: "Xenon_PVP", sub: "قائد مجتمع ألعاب" },
+            { id: "test-3", rating: 5, comment: "موقع ويب مذهل حقًا! التصميم الزجاجي العصري والأنيميشن الممتاز أعطى شركتنا مظهرًا احترافيًا ضاعف مبيعاتنا بشكل ملحوظ.", name: "Vortex Gaming", sub: "مدير استوديو" }
+        ],
+        faqs: [
+            { id: "faq-1", question: "كيف يمكنني تقديم طلب مخصص؟", answer: "يمكنك استخدام نموذج الاتصال في أسفل الصفحة أو الانضمام إلى سيرفر ديسكورد الخاص بنا. سيقوم مدير المشروع بمراجعة التفاصيل، وتقدير الميزانية، وإصدار الفاتورة." },
+            { id: "faq-2", question: "ما هي طرق الدفع المقبولة لديكم؟", answer: "نحن نقبل الدفع عبر بايبال (PayPal)، والبطاقات البنكية عبر سترايب (Stripe)، بالإضافة إلى الدفع بعملة روبوكس (مع تغطية ضريبة روبلوكس)." },
+            { id: "faq-3", question: "هل تقدمون دعمًا فنيًا بعد التسليم؟", answer: "نعم! جميع السكربتات المخصصة ومواقع الويب تأتي مع فترة ضمان مدتها 14 يومًا ضد الأخطاء والمشاكل البرمجية مجانًا." },
+            { id: "faq-4", question: "هل يمكنني تعديل الموقع بعد النشر؟", answer: "بالتأكيد. من خلال لوحة التحكم المرئية الذكية والمخفية (والتي تفتح بالبحث عن '3m studio admin' وإدخال رمز المرور 'maloka')، يمكنك تعديل كل شيء مباشرة." }
+        ],
+        services: [
+            {
+                id: "srv-roblox-1",
+                category: "roblox-dev",
+                name: "ألعاب روبلوكس متكاملة",
+                priceBase: 499,
+                desc: "تصميم وتطوير ألعاب روبلوكس كاملة من الفكرة والخرائط إلى السكربتات النهائية وتجهيز أنظمة الشراء.",
+                features: ["تصميم هيكلية اللعبة كاملة", "سكربتات طريقة اللعب (Gameplay)", "ربط قواعد البيانات (DataStore)", "تجهيز خيارات تحقيق الأرباح"]
+            },
+            {
+                id: "srv-roblox-2",
+                category: "roblox-dev",
+                name: "أنظمة وسكربتات مخصصة",
+                priceBase: 99,
+                desc: "أنظمة قتال متطورة، حقائب لاعبين (Inventory)، أنظمة مقايضة، وسكربتات حماية مخصصة.",
+                features: ["برمجة سكربتات مرنة ومنظمة", "نظام حماية ضد الغش والتهكير", "حفظ بيانات متقدم وآمن", "تحسين السكربتات لمنع التعليق"]
+            },
+            {
+                id: "srv-roblox-3",
+                category: "roblox-dev",
+                name: "خرائط وبناء مجسمات",
+                priceBase: 199,
+                desc: "بناء خرائط ألعاب بجودة عالية، ساحات انتظار (Lobbies)، وبيئات ألعاب سيمولاتور مذهلة.",
+                features: ["تصميم بيئات مستقبلية وخيالية", "أنماط بناء منخفضة ومحسنة (Low-Poly)", "تجميع وتجهيز المجسمات الفريدة", "إضاءة وتأثيرات بصرية احترافية"]
+            },
+            {
+                id: "srv-roblox-4",
+                category: "roblox-dev",
+                name: "تصميم واجهات المستخدم UI",
+                priceBase: 79,
+                desc: "واجهات مستخدم (GUI) حديثة، جذابة، ومتوافقة بالكامل مع شاشات الجوال، الكمبيوتر، والكونسول.",
+                features: ["أيقونات ورسومات مخصصة", "أبعاد متجاوبة مع كافة الشاشات", "تأثيرات حركية عند الضغط", "تصميم نوافذ المتجر والقوائم"]
+            },
+            {
+                id: "srv-store-1",
+                category: "roblox-store",
+                name: "خريطة سيمولاتور Aero",
+                priceBase: 49.99,
+                desc: "خريطة سيمولاتور جزر طائرة جاهزة ومصممة بجودة عالية مع مناطق مخصصة للمتاجر والسباون.",
+                features: ["منطقة سباون جاهزة ومثيرة", "منصات للمتاجر والتبادل", "بوابات نيون سحرية", "هندسة معمارية خفيفة ومحسنة"]
+            },
+            {
+                id: "srv-store-2",
+                category: "roblox-store",
+                name: "حزمة قيمباس VIP جاهزة",
+                priceBase: 19.99,
+                desc: "سكربت VIP قيمباس سهل التركيب يمنح المشترين تاغ فوق الرأس، سرعة مضاعفة، وجوائز يومية.",
+                features: ["عنوان VIP مضيء فوق رأس اللاعب", "بوابة خاصة لا يدخلها إلا الـ VIP", "سكربت زيادة السرعة والقفز", "مضاعفة العملات اليومية تلقائيًا"]
+            },
+            {
+                id: "srv-store-3",
+                category: "roblox-store",
+                name: "نظام تجارة وتبادل متطور",
+                priceBase: 39.99,
+                desc: "نظام مقايضة آمن بين اللاعبين لتبادل الحيوانات الأليفة، الأدوات، والعملات مع منع الثغرات.",
+                features: ["منع ثغرات نسخ العناصر (Duping)", "واجهة مقايضة متطورة وبسيطة", "إمكانية فرض عمولة روبوكس", "سجل لتوثيق جميع العمليات"]
+            },
+            {
+                id: "srv-discord-1",
+                category: "discord-services",
+                name: "إعداد وتصميم السيرفرات",
+                priceBase: 49,
+                desc: "إعداد سيرفرات ديسكورد احترافية مع ترتيب الرتب، الغرف، وبوتات الترحيب والترويج التلقائي.",
+                features: ["ترتيب الرتب والغرف بشكل جذاب", "إعداد أنظمة التعديل والرقابة التلقائية", "تصميم فواصل ورموز نيون مميزة", "ربط وبوتات الترحيب التلقائي"]
+            },
+            {
+                id: "srv-discord-2",
+                category: "discord-services",
+                name: "بوتات ديسكورد مخصصة",
+                priceBase: 149,
+                desc: "برمجة وتصميم بوتات ديسكورد خاصة بلغة JS مع قواعد بيانات ومميزات فريدة لسيرفرك.",
+                features: ["متوافقة للعمل 24/7 دون انقطاع", "إمكانية التحقق من حسابات روبلوكس", "أوامر مخصصة (Slash Commands)", "ربط قاعدة بيانات MongoDB"]
+            },
+            {
+                id: "srv-discord-3",
+                category: "discord-services",
+                name: "أنظمة التذاكر والتحقق",
+                priceBase: 29,
+                desc: "إعداد بوابات تحقق لمنع البوتات (عبر كابتشا أو ديسكورد) وتجهيز تذاكر دعم فني بالأزرار.",
+                features: ["حماية السيرفر من هجمات البوتات", "تذاكر دعم فني سريعة بالأزرار", "تسجيل وحفظ سجل التذاكر تلقائيًا", "إدارة وتوزيع التذاكر على الإدارة"]
+            },
+            {
+                id: "srv-web-1",
+                category: "website-dev",
+                name: "مواقع مجتمعات الألعاب",
+                priceBase: 299,
+                desc: "مواقع ويب متكاملة لمجتمعات الألعاب والكلانات تشمل لوحات تحكم، ترتيب متصدرين، ومتجر.",
+                features: ["ثيم ألعاب داكن وتفاعلي", "لوحة تحكم لأعضاء الكلان والكلد", "عرض متصدري ألعاب روبلوكس", "واجهة متجر لعرض المنتجات"]
+            },
+            {
+                id: "srv-web-2",
+                category: "website-dev",
+                name: "صفحات الهبوط والمعارض",
+                priceBase: 129,
+                desc: "صفحة هبوط مذهلة واحترافية لعرض سيرتك الذاتية، أعمالك، أو ألعاب استوديو التطوير الخاص بك.",
+                features: ["سرعة تحميل خارقة وخفيفة", "متوافقة تمامًا مع محركات البحث (SEO)", "نموذج اتصال متطور وذكي", "شبكة معرض أعمال تفاعلية"]
+            },
+            {
+                id: "srv-web-3",
+                category: "website-dev",
+                name: "لوحات تحكم الإدارة المخصصة",
+                priceBase: 499,
+                desc: "لوحات ويب خاصة لتتبع إحصائيات لاعبيك داخل روبلوكس، البلاغات، والمبيعات بشكل حي ومباشر.",
+                features: ["خلفية برمجية قوية بلغة NodeJS", "رسوم بيانية وإحصائيات حية", "تعديل إعدادات اللعبة من الويب", "ربط مباشر وآمن بقواعد البيانات"]
+            }
+        ]
+    },
+    en: {
+        texts: {
+            nav_logo: "3M",
+            nav_logo_sub: "STUDIO",
+            hero_badge: "PREMIUM GAMING AGENCY",
+            hero_title_p1: "Build Your Dream",
+            hero_title_p2: "Project With 3M Studio",
+            hero_subtitle: "Professional Roblox Development, Discord Services and Website Creation. Turn your ideas into digital reality.",
+            hero_btn_1: "Get Started",
+            hero_btn_2: "View Services",
+            services_section_title: "What We Specialize In",
+            services_section_subtitle: "We deliver premium-grade gaming community setups, custom scripts, store products, and professional web solutions.",
+            portfolio_section_title: "Showcase of Our Works",
+            portfolio_section_subtitle: "Explore some of our latest Roblox builds, scripting systems, Discord communities, and sleek website layouts.",
+            why_section_title: "Why Choose Our Agency?",
+            why_section_subtitle: "We combine gaming culture expertise with high-level technical development to craft unbeatable solutions.",
+            testimonials_section_title: "What Clients Say",
+            testimonials_section_subtitle: "Read verified testimonials from server owners, game creators, and community managers who trust 3M Studio.",
+            faq_section_title: "Frequently Asked Questions",
+            faq_section_subtitle: "Got questions? We have answers. Find quick answers about ordering, custom bots, delivery times, and more.",
+            contact_section_title: "Start Your Project Journey",
+            contact_section_subtitle: "Ready to take your game or server to the next level? Fill out the form, and our representatives will reach out in less than 24 hours.",
+            contact_email: "contact@3mstudio.gg",
+            contact_discord: "discord.gg/3mstudio",
+            contact_hours: "24/7 Response Time",
+            contact_socials_title: "Follow Our Community",
+            footer_logo: "3M",
+            footer_logo_sub: "STUDIO",
+            footer_pitch: "Professional Roblox development, Discord configurations, and web apps tailored for gaming communities.",
+            footer_col_1_title: "Quick Links",
+            footer_col_2_title: "Services",
+            footer_col_3_title: "Legal",
+            footer_copy: "3M Studio"
+        },
+        whyChooseUs: [
+            { id: "why-1", title: "Fast Delivery", desc: "We value your time. Most setups and scripts are completed in 3-5 days.", icon: "zap" },
+            { id: "why-2", title: "Professional Team", desc: "Experienced Roblox developers, web programmers, and Discord engineers.", icon: "users" },
+            { id: "why-3", title: "Affordable Prices", desc: "Premium quality gaming services priced to fit your project budget.", icon: "dollar-sign" },
+            { id: "why-4", title: "24/7 Support", desc: "Our ticket operators and support bots are available round the clock.", icon: "help-circle" },
+            { id: "why-5", title: "Secure Payments", desc: "Full safety assurance through reliable escrow, Stripe, or Robux payments.", icon: "shield" }
+        ],
+        testimonials: [
+            { id: "test-1", rating: 5, comment: "3M Studio built our simulator map and scripting system. The delivery was fast, and the code runs with zero lag! Highly recommend their Roblox team.", name: "TofuuGamer", sub: "Game Producer" },
+            { id: "test-2", rating: 5, comment: "Our esports community needed a custom bot to verify Roblox accounts and track match wins. The 3M Discord Bot works flawlessly 24/7.", name: "Xenon_PVP", sub: "Guild Leader" },
+            { id: "test-3", rating: 5, comment: "Aesthetically outstanding website. The glassmorphism cards and smooth animations gave our studio a premium look that doubled our lead conversions.", name: "Vortex Gaming", sub: "Studio Manager" }
+        ],
+        faqs: [
+            { id: "faq-1", question: "How do I place a custom order?", answer: "You can use the contact form at the bottom of the page or join our Discord server. A project manager will review details, establish a budget/timeline, and issue an order invoice." },
+            { id: "faq-2", question: "What payment methods do you accept?", answer: "We accept PayPal, Credit/Debit Cards via Stripe, and Robux payments (with tax coverage). All transactions are fully secured." },
+            { id: "faq-3", question: "Do you offer post-delivery support?", answer: "Yes! Every custom script or website comes with a 14-day warranty for bugs. We also offer extended hosting and bot management subscriptions." },
+            { id: "faq-4", question: "Can you edit the website after it is published?", answer: "Absolutely. With our visual edit panel (accessible via the secure access command '3m studio admin' in the search bar and password 'maloka'), administrators can modify all titles, prices, descriptions, and section arrangements directly." }
+        ],
+        services: [
+            {
+                id: "srv-roblox-1",
+                category: "roblox-dev",
+                name: "Custom Roblox Games",
+                priceBase: 499,
+                desc: "Full-scale game creation from design concept to final scripts, optimizing for player retention.",
+                features: ["Full Game Architecture", "Custom Gameplay Loops", "DataStore Configurations", "Monetization Setup"]
+            },
+            {
+                id: "srv-roblox-2",
+                category: "roblox-dev",
+                name: "Systems & Scripts",
+                priceBase: 99,
+                desc: "Custom combat mechanics, inventories, trade systems, and backend frameworks.",
+                features: ["Robust Scripting API", "Anti-Cheat Protection", "Datastore Systems", "Lag-Free Optimization"]
+            },
+            {
+                id: "srv-roblox-3",
+                category: "roblox-dev",
+                name: "Maps & Builds",
+                priceBase: 199,
+                desc: "High-quality, immersive game maps, lobbies, and simulator environments.",
+                features: ["Futuristic & Sci-Fi Builds", "Low-Poly & Realistic Styles", "Prop Assemblies", "Custom Lighting Layouts"]
+            },
+            {
+                id: "srv-roblox-4",
+                category: "roblox-dev",
+                name: "UI Design",
+                priceBase: 79,
+                desc: "Clean, modern, and fully responsive user interfaces tailored for console, PC, and mobile.",
+                features: ["Custom Icons & Layouts", "Scale-Responsive Scaling", "Button Hover Animations", "Shop & HUD Interfaces"]
+            },
+            {
+                id: "srv-store-1",
+                category: "roblox-store",
+                name: "Aero Sim Lobby Map",
+                priceBase: 49.99,
+                desc: "A stunning, pre-built high-quality sky islands simulator lobby with customizable areas.",
+                features: ["Pre-configured Spawn Zone", "Shop & Trade Stands", "Beautiful Neon Portals", "Optimized Geometry"]
+            },
+            {
+                id: "srv-store-2",
+                category: "roblox-store",
+                name: "VIP System Gamepass Pack",
+                priceBase: 19.99,
+                desc: "VIP pass script with tag titles, speed boosts, and daily rewards.",
+                features: ["In-game Overhead Title", "Custom VIP Room Gate", "Speed & Jump Boost Scripts", "Daily Coin Bonus System"]
+            },
+            {
+                id: "srv-store-3",
+                category: "roblox-store",
+                name: "Advanced Trading System",
+                priceBase: 39.99,
+                desc: "A fully secured peer-to-peer player trading system supporting pets, tools, and cash.",
+                features: ["Secure Duping Prevention", "Interactive User UI", "Robux Commission Options", "Transaction Ledger System"]
+            },
+            {
+                id: "srv-discord-1",
+                category: "discord-services",
+                name: "Server Setup & Design",
+                priceBase: 49,
+                desc: "Professional discord layouts with role hierarchies, auto-moderation, and custom channels.",
+                features: ["Role & Channel Hierarchy", "Auto-Mod Configuration", "Clean Vector Layouts", "Aesthetic Fonts & Symbols"]
+            },
+            {
+                id: "srv-discord-2",
+                category: "discord-services",
+                name: "Custom Discord Bots",
+                priceBase: 149,
+                desc: "Tailored NodeJS Discord bots with database integrations, dashboard links, and game APIs.",
+                features: ["24/7 Hosting Compatible", "Roblox Link Verification", "Command Slash Configs", "Database (MongoDB) Sync"]
+            },
+            {
+                id: "srv-discord-3",
+                category: "discord-services",
+                name: "Ticket & Verification Systems",
+                priceBase: 29,
+                desc: "Secure verification gates (Bloxlink/custom) and user support ticket panels.",
+                features: ["Secure Captcha Gates", "Interactive Button Panels", "Support Transcript Loggers", "Staff Queue Management"]
+            },
+            {
+                id: "srv-web-1",
+                category: "website-dev",
+                name: "Gaming Communities Websites",
+                priceBase: 299,
+                desc: "Premium websites with guilds dashboards, forums, rankings integration, and shop pages.",
+                features: ["Tailored Dark Aesthetic", "Dynamic Guild Forums", "Roblox API Leaderboards", "Animated UI/UX Panels"]
+            },
+            {
+                id: "srv-web-2",
+                category: "website-dev",
+                name: "Landing Pages & Portfolios",
+                priceBase: 129,
+                desc: "Stunning single-page sites to showcase your games, designs, or streaming career.",
+                features: ["High-speed Loading", "SEO Optimized Coding", "Interactive Contact Hubs", "Dynamic Work Grid Layouts"]
+            },
+            {
+                id: "srv-web-3",
+                category: "website-dev",
+                name: "Custom Admin Dashboards",
+                priceBase: 499,
+                desc: "Web panels to track in-game purchases, player reports, and server analytics in real time.",
+                features: ["ExpressJS/NodeJS Backend", "Live Analytics Charts", "Staff Management Toggles", "API Database Integrations"]
+            }
+        ]
+    },
+    portfolio: [
+        { id: "port-1", category: "roblox", title_ar: "خريطة سيمولاتور خيال علمي", title_en: "Sci-Fi Simulator Map", desc_ar: "بيئة سيمولاتور عالية التفاصيل مع شوارع مضيئة نيون وسيارات طائرة متحركة.", desc_en: "High-detail simulator environment with glowing neon streets and animated hovercars.", img: "assets/images/roblox_dev.png", tag_ar: "بناء خريطة روبلوكس", tag_en: "Roblox Map Build" },
+        { id: "port-2", category: "roblox", title_ar: "نظام حقيبة لاعب RPG", title_en: "RPG Inventory System", desc_ar: "واجهة حقيبة لاعب (Inventory) متجاوبة لتركيب المعدات، صناعة الأسلحة، وترتيب العناصر.", desc_en: "A sleek, responsive inventory GUI featuring pet equip, weapon crafting, and sorting.", img: "assets/images/roblox_store.png", tag_ar: "برمجة روبلوكس", tag_en: "Roblox Scripting" },
+        { id: "port-3", category: "discord", title_ar: "سيرفر Nexus Esports", title_en: "Nexus Esports Server Setup", desc_ar: "إعداد كامل لسيرفر بطولة ألعاب إلكترونية يتضمن غرف التشكيلات وبوتات التسجيل.", desc_en: "Full-scale server template for an esports league including bracket bots and team channels.", img: "assets/images/discord_setup.png", tag_ar: "إعداد ديسكورد", tag_en: "Discord Setup" },
+        { id: "port-4", category: "web", title_ar: "لوحة تحكم استوديو 3M", title_en: "3M Game Studio Dashboard", desc_ar: "لوحة تحكم متطورة لعرض إحصائيات لاعبيك النشطين، المبيعات وسجلات التبادل الفورية.", desc_en: "Premium admin dashboard for game analytics, active player maps, and real-time trade logs.", img: "assets/images/gaming_web.png", tag_ar: "تصميم موقع ويب", tag_en: "Website Design" }
     ],
     statistics: [
-        { id: "stat-1", value: 120, suffix: "+", label: "Completed Orders" },
-        { id: "stat-2", value: 65, suffix: "+", label: "Happy Clients" },
-        { id: "stat-3", value: 35, suffix: "+", label: "Projects Developed" },
-        { id: "stat-4", value: 24, suffix: "/7", label: "Support Avail" }
-    ],
-    services: [
-        {
-            id: "srv-roblox-1",
-            category: "roblox-dev",
-            name: "Custom Roblox Games",
-            price: "Starting at $499",
-            desc: "Full-scale game creation from design concept to final scripts, optimizing for player retention.",
-            features: ["Full Game Architecture", "Custom Gameplay Loops", "DataStore Configurations", "Monetization Setup"]
-        },
-        {
-            id: "srv-roblox-2",
-            category: "roblox-dev",
-            name: "Systems & Scripts",
-            price: "Starting at $99",
-            desc: "Custom combat mechanics, inventories, trade systems, and backend frameworks.",
-            features: ["Robust Scripting API", "Anti-Cheat Protection", "Datastore Systems", "Lag-Free Optimization"]
-        },
-        {
-            id: "srv-roblox-3",
-            category: "roblox-dev",
-            name: "Maps & Builds",
-            price: "Starting at $199",
-            desc: "High-quality, immersive game maps, lobbies, and simulator environments.",
-            features: ["Futuristic & Sci-Fi Builds", "Low-Poly & Realistic Styles", "Prop Assemblies", "Custom Lighting Layouts"]
-        },
-        {
-            id: "srv-roblox-4",
-            category: "roblox-dev",
-            name: "UI Design",
-            price: "Starting at $79",
-            desc: "Clean, modern, and fully responsive user interfaces tailored for console, PC, and mobile.",
-            features: ["Custom Icons & Layouts", "Scale-Responsive Scaling", "Button Hover Animations", "Shop & HUD Interfaces"]
-        },
-        {
-            id: "srv-store-1",
-            category: "roblox-store",
-            name: "Aero Sim Lobby Map",
-            price: "$49.99",
-            desc: "A stunning, pre-built high-quality sky islands simulator lobby with customizable areas.",
-            features: ["Pre-configured Spawn Zone", "Shop & Trade Stands", "Beautiful Neon Portals", "Optimized Geometry"]
-        },
-        {
-            id: "srv-store-2",
-            category: "roblox-store",
-            name: "VIP System Gamepass Pack",
-            price: "$19.99",
-            desc: "Ready-to-install VIP pass script with tag titles, speed boosts, and daily rewards.",
-            features: ["In-game Overhead Title", "Custom VIP Room Gate", "Speed & Jump Boost Scripts", "Daily Coin Bonus System"]
-        },
-        {
-            id: "srv-store-3",
-            category: "roblox-store",
-            name: "Advanced Trading System",
-            price: "$39.99",
-            desc: "A fully secured peer-to-peer player trading system supporting pets, tools, and cash.",
-            features: ["Secure Duping Prevention", "Interactive User UI", "Robux Commission Options", "Transaction Ledger System"]
-        },
-        {
-            id: "srv-discord-1",
-            category: "discord-services",
-            name: "Server Setup & Design",
-            price: "Starting at $49",
-            desc: "Professional discord layouts with perfect role hierarchies, auto-moderation, and custom channels.",
-            features: ["Role & Channel Hierarchy", "Auto-Mod Configuration", "Clean Vector Layouts", "Aesthetic Fonts & Symbols"]
-        },
-        {
-            id: "srv-discord-2",
-            category: "discord-services",
-            name: "Custom Discord Bots",
-            price: "Starting at $149",
-            desc: "Tailored NodeJS Discord bots with database integrations, dashboard links, and game APIs.",
-            features: ["24/7 Hosting Compatible", "Roblox Link Verification", "Command Slash Configs", "Database (MongoDB) Sync"]
-        },
-        {
-            id: "srv-discord-3",
-            category: "discord-services",
-            name: "Ticket & Verification Systems",
-            price: "Starting at $29",
-            desc: "Secure bot-led verification gates (Bloxlink/custom) and user support ticket panels.",
-            features: ["Secure Captcha Gates", "Interactive Button Panels", "Support Transcript Loggers", "Staff Queue Management"]
-        },
-        {
-            id: "srv-web-1",
-            category: "website-dev",
-            name: "Gaming Communities Websites",
-            price: "Starting at $299",
-            desc: "Premium websites with guilds dashboards, forums, rankings integration, and shop pages.",
-            features: ["Tailored Dark Aesthetic", "Dynamic Guild Forums", "Roblox API Leaderboards", "Animated UI/UX Panels"]
-        },
-        {
-            id: "srv-web-2",
-            category: "website-dev",
-            name: "Landing Pages & Portfolios",
-            price: "Starting at $129",
-            desc: "Stunning single-page sites to showcase your games, designs, or streaming career.",
-            features: ["High-speed Loading", "SEO Optimized Coding", "Interactive Contact Hubs", "Dynamic Work Grid Layouts"]
-        },
-        {
-            id: "srv-web-3",
-            category: "website-dev",
-            name: "Custom Admin Dashboards",
-            price: "Starting at $499",
-            desc: "Web panels to track in-game purchases, player reports, and server analytics in real time.",
-            features: ["ExpressJS/NodeJS Backend", "Live Analytics Charts", "Staff Management Toggles", "API Database Integrations"]
-        }
-    ],
-    portfolio: [
-        { id: "port-1", category: "roblox", title: "Sci-Fi Simulator Map", desc: "High-detail simulator environment with glowing neon streets and animated hovercars.", img: "assets/images/roblox_dev.png", tag: "Roblox Map Build" },
-        { id: "port-2", category: "roblox", title: "RPG Inventory System", desc: "A sleek, responsive inventory GUI featuring pet equip, weapon crafting, and sorting.", img: "assets/images/roblox_store.png", tag: "Roblox Scripting" },
-        { id: "port-3", category: "discord", title: "Nexus Esports Server Setup", desc: "Full-scale server template for an esports league including bracket bots and team channels.", img: "assets/images/discord_setup.png", tag: "Discord Setup" },
-        { id: "port-4", category: "web", title: "3M Game Studio Dashboard", desc: "Premium admin dashboard for game analytics, active player maps, and real-time trade logs.", img: "assets/images/gaming_web.png", tag: "Website Design" }
-    ],
-    testimonials: [
-        { id: "test-1", rating: 5, comment: "3M Studio built our simulator map and scripting system. The delivery was fast, and the code runs with zero lag! Highly recommend their Roblox team.", name: "TofuuGamer", sub: "Game Producer" },
-        { id: "test-2", rating: 5, comment: "Our esports community needed a custom bot to verify Roblox accounts and track match wins. The 3M Discord Bot works flawlessly 24/7.", name: "Xenon_PVP", sub: "Guild Leader" },
-        { id: "test-3", rating: 5, comment: "Aesthetically outstanding website. The glassmorphism cards and smooth animations gave our studio a premium look that doubled our lead conversions.", name: "Vortex Gaming", sub: "Studio Manager" }
-    ],
-    faqs: [
-        { id: "faq-1", question: "How do I place a custom order?", answer: "You can use the contact form at the bottom of the page or join our Discord server. A project manager will review details, establish a budget/timeline, and issue an order invoice." },
-        { id: "faq-2", question: "What payment methods do you accept?", answer: "We accept PayPal, Credit/Debit Cards via Stripe, and Robux payments (with tax coverage). All transactions are fully secured." },
-        { id: "faq-3", question: "Do you offer post-delivery support?", answer: "Yes! Every custom script or website comes with a 14-day warranty for bugs. We also offer extended hosting and bot management subscriptions." },
-        { id: "faq-4", question: "Can you edit the website after it is published?", answer: "Absolutely. With our visual edit panel (accessible via the secure access command '3m studio admin' in the search bar and password 'maloka'), administrators can modify all titles, prices, descriptions, and section arrangements directly." }
+        { id: "stat-1", value: 120, suffix: "+", label_ar: "طلبات مكتملة", label_en: "Completed Orders" },
+        { id: "stat-2", value: 65, suffix: "+", label_ar: "عميل سعيد", label_en: "Happy Clients" },
+        { id: "stat-3", value: 35, suffix: "+", label_ar: "مشروع مطور", label_en: "Projects Developed" },
+        { id: "stat-4", value: 24, suffix: "/7", label_ar: "ساعات الدعم", label_en: "Support Hours" }
     ]
 };
 
-// --- Application Core State Variables ---
+// --- App Control Variables ---
 let draftState = {};
 let liveState = {};
 let historyStack = [];
@@ -189,9 +350,20 @@ let historyIndex = -1;
 let adminMode = false;
 let autoSaveTimer = null;
 let auditLogs = [];
-let leads = [];
+let leads = []; // Inbound Contact submissions
+let orders = []; // Inbound Store Purchase submissions
+let smtpLogs = []; // Outgoing mail simulations
+let currentLang = "ar"; // 'ar' default
+let currentCurrency = "EGP"; // 'EGP' default
 
-// --- Helper: Convert HEX to RGB for opacity properties ---
+// Exchange rates (USD based)
+const CURRENCY_CONVERSIONS = {
+    USD: { rate: 1.0, symbol: "$", arLabel: "دولار أمريكي", enLabel: "USD" },
+    EGP: { rate: 48.0, symbol: "جنيه مصري", enLabel: "EGP" },
+    EUR: { rate: 0.92, symbol: "€", arLabel: "يورو", enLabel: "EUR" }
+};
+
+// --- Helper: Convert HEX to RGB ---
 function hexToRgb(hex) {
     let c;
     if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
@@ -210,7 +382,6 @@ function addAuditLog(msg, isError = false) {
     const timestamp = new Date().toLocaleTimeString();
     auditLogs.push({ time: timestamp, msg: msg, isError: isError });
     
-    // Update logs modal console if open
     const logConsole = document.getElementById("logs-console-container");
     if (logConsole) {
         const line = document.createElement("div");
@@ -221,9 +392,59 @@ function addAuditLog(msg, isError = false) {
     }
 }
 
+// --- SMTP Mail Simulator Outbox Logger ---
+function triggerSMTPSimulation(toEmail, subject, bodyContent) {
+    const timestamp = new Date().toLocaleString();
+    const logMessage = `[SMTP ${timestamp}] To: ${toEmail} - Subject: ${subject} - Body Length: ${bodyContent.length} chars... SUCCESS (250 OK)`;
+    
+    // Save locally
+    smtpLogs.unshift({ time: timestamp, to: toEmail, subject: subject, body: bodyContent });
+    localStorage.setItem("3m_studio_smtp_logs", JSON.stringify(smtpLogs));
+
+    // Update SMTP outbox tab UI
+    renderSMTPLogs();
+}
+
+function renderSMTPLogs() {
+    const container = document.getElementById("smtp-logs-container");
+    if (!container) return;
+
+    if (smtpLogs.length === 0) {
+        container.innerHTML = `<div class="no-leads" style="color:var(--text-dark);">No emails in SMTP outbox.</div>`;
+        return;
+    }
+
+    container.innerHTML = smtpLogs.map(l => `
+        <div class="log-line" style="margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.03); padding-bottom:8px;">
+            <span class="log-time">[${l.time}]</span>
+            <span class="log-msg">
+                <strong style="color:var(--admin-color);">Sent to: ${l.to}</strong><br>
+                <strong>Subject: ${l.subject}</strong><br>
+                <span style="color:var(--text-muted); font-size:0.75rem;">${l.body.substring(0, 150)}...</span>
+            </span>
+        </div>
+    `).join("");
+}
+
+// --- Format prices based on selected Currency & Language ---
+function getFormattedPrice(basePriceUSD, currency = currentCurrency, lang = currentLang) {
+    const config = CURRENCY_CONVERSIONS[currency];
+    if (!config) return basePriceUSD;
+
+    const converted = Math.round(basePriceUSD * config.rate * 100) / 100;
+    
+    if (currency === "USD") {
+        return lang === "ar" ? `${converted} دولار أمريكي` : `$${converted}`;
+    } else if (currency === "EUR") {
+        return lang === "ar" ? `${converted} يورو` : `€${converted}`;
+    } else { // EGP default
+        return lang === "ar" ? `${converted} جنيه مصري` : `${converted} EGP`;
+    }
+}
+
 // --- Initialize / Sync State ---
 function initStates() {
-    // 1. Get Live State (public state)
+    // 1. Get Live State
     const storedLive = localStorage.getItem("3m_studio_live_state");
     if (storedLive) {
         liveState = JSON.parse(storedLive);
@@ -246,27 +467,46 @@ function initStates() {
 
     // Load Inquiries/Messages
     const storedLeads = localStorage.getItem("3m_studio_leads");
-    if (storedLeads) {
-        leads = JSON.parse(storedLeads);
-    } else {
-        leads = [];
-        localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
-    }
+    leads = storedLeads ? JSON.parse(storedLeads) : [];
+
+    // Load Store Orders
+    const storedOrders = localStorage.getItem("3m_studio_orders");
+    orders = storedOrders ? JSON.parse(storedOrders) : [];
+
+    // Load SMTP Logs
+    const storedSMTP = localStorage.getItem("3m_studio_smtp_logs");
+    smtpLogs = storedSMTP ? JSON.parse(storedSMTP) : [];
+
+    // Check saved language & currency settings
+    const savedLang = localStorage.getItem("3m_studio_lang");
+    if (savedLang) currentLang = savedLang;
+    
+    const savedCurr = localStorage.getItem("3m_studio_currency");
+    if (savedCurr) currentCurrency = savedCurr;
+
+    // Apply language flags and status in UI buttons
+    updateLangUIIndicators();
+    updateCurrencyUIIndicators();
 
     // Push initial history state
     pushToHistory(JSON.parse(JSON.stringify(draftState)), "Initialized site state");
 
     // Enable admin mode if logged in
     if (isLoggedIn) {
-        enableAdminMode(false); // Enable without password prompt
+        enableAdminMode(false);
     } else {
-        applyState(liveState); // Render public state
+        applyState(liveState);
+    }
+
+    // Check if user is logged in with Discord
+    const discordUser = localStorage.getItem("discord_user");
+    if (discordUser) {
+        applyDiscordLoginState(JSON.parse(discordUser));
     }
 }
 
-// --- Push history for Undo/Redo operations ---
+// --- Push history for Undo/Redo ---
 function pushToHistory(stateCopy, description = "Action completed") {
-    // Trim history after current index
     if (historyIndex < historyStack.length - 1) {
         historyStack = historyStack.slice(0, historyIndex + 1);
     }
@@ -292,7 +532,11 @@ function updateUndoRedoButtons() {
 function applyState(state) {
     if (!state) return;
     
-    // 1. Theme Variables
+    // Set direction and lang
+    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = currentLang;
+
+    // Apply Theme Colors
     if (state.theme) {
         document.documentElement.style.setProperty('--primary-color', state.theme.primaryColor);
         document.documentElement.style.setProperty('--primary-rgb', hexToRgb(state.theme.primaryColor));
@@ -300,7 +544,7 @@ function applyState(state) {
         document.documentElement.style.setProperty('--secondary-rgb', hexToRgb(state.theme.secondaryColor));
         document.documentElement.style.setProperty('--bg-dark', state.theme.bgDark);
         
-        // Update picker fields if admin side panel is active
+        // Update picker fields in Side Panel
         const pickPrimary = document.getElementById("color-primary");
         const textPrimary = document.getElementById("color-primary-text");
         const pickSecondary = document.getElementById("color-secondary");
@@ -313,9 +557,12 @@ function applyState(state) {
         if (pickBg) { pickBg.value = state.theme.bgDark; textBg.value = state.theme.bgDark; }
     }
 
-    // 2. static Texts & Buttons
-    if (state.texts) {
-        for (const [id, value] of Object.entries(state.texts)) {
+    // Apply texts depending on active language
+    const langDatabase = state[currentLang] || state["ar"];
+
+    // static texts
+    if (langDatabase && langDatabase.texts) {
+        for (const [id, value] of Object.entries(langDatabase.texts)) {
             const elements = document.querySelectorAll(`[data-edit-id="${id}"]`);
             elements.forEach(el => {
                 if (el.innerHTML !== value) {
@@ -325,28 +572,28 @@ function applyState(state) {
         }
     }
 
-    // 3. Section Positions / Order
+    // Apply Section positions / Order
     if (state.sectionOrder) {
         const container = document.getElementById("sections-container");
         if (container) {
             state.sectionOrder.forEach(secName => {
                 const secEl = document.getElementById(secName);
                 if (secEl) {
-                    container.appendChild(secEl); // Appending swaps order dynamically
+                    container.appendChild(secEl);
                 }
             });
         }
     }
 
-    // 4. Collections Redraws
-    renderServices(state.services);
+    // Redraw collection structures
+    renderServices(langDatabase.services);
     renderPortfolio(state.portfolio);
-    renderFAQ(state.faqs);
-    renderWhyChooseUs(state.whyChooseUs);
+    renderFAQ(langDatabase.faqs);
+    renderWhyChooseUs(langDatabase.whyChooseUs);
     renderStatistics(state.statistics);
-    renderTestimonials(state.testimonials);
+    renderTestimonials(langDatabase.testimonials);
 
-    // Apply Editable controls if admin mode active
+    // Apply editable outlines if in visual admin mode
     if (adminMode) {
         enableContentEditable();
     }
@@ -361,7 +608,6 @@ function renderServices(servicesList) {
         "website-dev": document.getElementById("website-dev-grid")
     };
     
-    // Clear grids
     for (const key in grids) {
         if (grids[key]) grids[key].innerHTML = "";
     }
@@ -390,17 +636,21 @@ function renderServices(servicesList) {
             <span>${f}</span>
         </li>`).join("");
 
+        const formattedPrice = getFormattedPrice(srv.priceBase);
+        const buyNowLbl = currentLang === "ar" ? "شراء الآن" : "Buy Now";
+
         card.innerHTML = `
             <div class="card-icon">${iconSvg}</div>
-            <span class="card-price" data-edit-id="services.${srv.id}.price">${srv.price}</span>
+            <span class="card-price" data-price-base="${srv.priceBase}">${formattedPrice}</span>
             <h3 class="card-title" data-edit-id="services.${srv.id}.name">${srv.name}</h3>
             <p class="card-desc" data-edit-id="services.${srv.id}.desc">${srv.desc}</p>
             <ul class="card-features">${featuresHtml}</ul>
+            <button class="btn btn-primary btn-glow btn-buy-now" data-product-id="${srv.id}">${buyNowLbl}</button>
         `;
         grid.appendChild(card);
     });
 
-    // Wire Card Glowing Border Cursor Hover Coordinates
+    // Wire Glowing border hover coordinates
     document.querySelectorAll(".service-card").forEach(card => {
         card.addEventListener("mousemove", e => {
             const rect = card.getBoundingClientRect();
@@ -410,9 +660,17 @@ function renderServices(servicesList) {
             card.style.setProperty("--y", `${y}px`);
         });
     });
+
+    // Wire Purchase Request Modal trigger
+    document.querySelectorAll(".btn-buy-now").forEach(btn => {
+        btn.onclick = () => {
+            const prodId = btn.getAttribute("data-product-id");
+            openPurchaseModal(prodId);
+        };
+    });
 }
 
-// --- Render Portfolio Showcase Items ---
+// --- Render Portfolio Grid Showcase ---
 function renderPortfolio(portfolioList) {
     const grid = document.getElementById("portfolio-grid");
     if (!grid) return;
@@ -424,29 +682,32 @@ function renderPortfolio(portfolioList) {
         
         let imgHtml = "";
         if (adminMode) {
-            // Render Editable Image Wrap
             imgHtml = `
                 <div class="editable-img-wrapper">
-                    <img class="portfolio-img" src="${item.img}" alt="${item.title}">
+                    <img class="portfolio-img" src="${item.img}" alt="${item.title_en}">
                     <div class="img-edit-overlay" data-img-target="portfolio.${item.id}.img">
                         <button class="img-edit-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                            Change Image
+                            ${currentLang === "ar" ? 'تعديل الصورة' : 'Change Image'}
                         </button>
                     </div>
                 </div>
             `;
         } else {
-            imgHtml = `<img class="portfolio-img" src="${item.img}" alt="${item.title}">`;
+            imgHtml = `<img class="portfolio-img" src="${item.img}" alt="${item.title_en}">`;
         }
+
+        const title = currentLang === "ar" ? item.title_ar : item.title_en;
+        const desc = currentLang === "ar" ? item.desc_ar : item.desc_en;
+        const tag = currentLang === "ar" ? item.tag_ar : item.tag_en;
 
         wrapper.innerHTML = `
             <div class="portfolio-item">
                 ${imgHtml}
                 <div class="portfolio-overlay">
-                    <span class="portfolio-tag" data-edit-id="portfolio.${item.id}.tag">${item.tag}</span>
-                    <h3 class="portfolio-title" data-edit-id="portfolio.${item.id}.title">${item.title}</h3>
-                    <p class="portfolio-desc" data-edit-id="portfolio.${item.id}.desc">${item.desc}</p>
+                    <span class="portfolio-tag" data-edit-id="portfolio.${item.id}.tag_${currentLang}">${tag}</span>
+                    <h3 class="portfolio-title" data-edit-id="portfolio.${item.id}.title_${currentLang}">${title}</h3>
+                    <p class="portfolio-desc" data-edit-id="portfolio.${item.id}.desc_${currentLang}">${desc}</p>
                 </div>
             </div>
         `;
@@ -454,7 +715,7 @@ function renderPortfolio(portfolioList) {
     });
 }
 
-// --- Render FAQ Accordion ---
+// --- Render FAQ Accordions ---
 function renderFAQ(faqList) {
     const accordion = document.getElementById("faq-accordion");
     if (!accordion) return;
@@ -475,14 +736,13 @@ function renderFAQ(faqList) {
         accordion.appendChild(item);
     });
 
-    // Wire Accordion Toggle Handlers
+    // Wire Toggles
     document.querySelectorAll(".faq-header").forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.onclick = () => {
             const item = btn.parentElement;
             const body = btn.nextElementSibling;
             const isActive = item.classList.contains("active");
 
-            // Close all
             document.querySelectorAll(".faq-item").forEach(other => {
                 other.classList.remove("active");
                 other.querySelector(".faq-header").setAttribute("aria-expanded", "false");
@@ -494,7 +754,7 @@ function renderFAQ(faqList) {
                 btn.setAttribute("aria-expanded", "true");
                 body.style.maxHeight = body.scrollHeight + "px";
             }
-        });
+        };
     });
 }
 
@@ -544,11 +804,14 @@ function renderStatistics(statsList) {
     statsList.forEach(item => {
         const box = document.createElement("div");
         box.className = "stat-item";
+        
+        const label = currentLang === "ar" ? item.label_ar : item.label_en;
+
         box.innerHTML = `
             <div class="stat-number" data-stat-target="${item.value}">
-                <span class="count-val" data-edit-id="statistics.${item.id}.value">${item.value}</span><span class="count-suffix" data-edit-id="statistics.${item.id}.suffix">${item.suffix}</span>
+                <span class="count-val">${item.value}</span><span class="count-suffix">${item.suffix}</span>
             </div>
-            <div class="stat-label" data-edit-id="statistics.${item.id}.label">${item.label}</div>
+            <div class="stat-label" data-edit-id="statistics.${item.id}.label_${currentLang}">${label}</div>
         `;
         grid.appendChild(box);
     });
@@ -583,23 +846,19 @@ function renderTestimonials(testList) {
     });
 }
 
-// --- Enable Direct contenteditable on data-edit-ids ---
+// --- Direct contenteditable triggers ---
 function enableContentEditable() {
     const elements = document.querySelectorAll("[data-edit-id]");
     elements.forEach(el => {
         el.setAttribute("contenteditable", "true");
         
-        // Remove existing listener to avoid stacking
         el.onblur = null;
-        
-        el.onblur = (e) => {
+        el.onblur = () => {
             const rawVal = el.innerHTML.trim();
             const editId = el.getAttribute("data-edit-id");
-            
             updateStateFromTextEdit(editId, rawVal);
         };
 
-        // Prevent Enter causing generic div tags in small text
         el.onkeydown = (e) => {
             if (e.key === "Enter" && !el.classList.contains("hero-subtitle") && !el.classList.contains("client-comment") && !el.classList.contains("faq-content")) {
                 e.preventDefault();
@@ -609,7 +868,6 @@ function enableContentEditable() {
     });
 }
 
-// --- Disable ContentEditable when leaving admin mode ---
 function disableContentEditable() {
     const elements = document.querySelectorAll("[data-edit-id]");
     elements.forEach(el => {
@@ -621,37 +879,48 @@ function disableContentEditable() {
 
 // --- Update draft state from text editor inputs ---
 function updateStateFromTextEdit(editId, newVal) {
+    // Determine language target
+    const isGlobal = !editId.startsWith("services.") && !editId.startsWith("faqs.") && !editId.startsWith("whyChooseUs.") && !editId.startsWith("testimonials.") && !editId.startsWith("portfolio.") && !editId.startsWith("statistics.");
+    
     if (editId.includes(".")) {
         // Nested collection path: e.g. services.srv-roblox-1.name
         const parts = editId.split(".");
         if (parts.length === 3) {
             const [collection, itemId, field] = parts;
-            const item = draftState[collection].find(x => x.id === itemId);
-            if (item) {
-                const oldVal = item[field];
-                if (oldVal !== newVal) {
+            
+            if (collection === "portfolio" || collection === "statistics") {
+                // Portfolio and statistics are in root
+                const item = draftState[collection].find(x => x.id === itemId);
+                if (item && item[field] !== newVal) {
                     item[field] = newVal;
                     pushToHistory(JSON.parse(JSON.stringify(draftState)), `Updated ${collection} [${itemId}] - ${field}`);
+                    saveDraft();
+                }
+            } else {
+                // Located inside language nodes: e.g. draftState.ar.services
+                const item = draftState[currentLang][collection].find(x => x.id === itemId);
+                if (item && item[field] !== newVal) {
+                    item[field] = newVal;
+                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Updated ${currentLang}.${collection} [${itemId}] - ${field}`);
                     saveDraft();
                 }
             }
         }
     } else {
-        // Static text key
-        const oldVal = draftState.texts[editId];
+        // Static text key inside language node
+        const oldVal = draftState[currentLang].texts[editId];
         if (oldVal !== newVal) {
-            draftState.texts[editId] = newVal;
-            pushToHistory(JSON.parse(JSON.stringify(draftState)), `Edited website text block: "${editId}"`);
+            draftState[currentLang].texts[editId] = newVal;
+            pushToHistory(JSON.parse(JSON.stringify(draftState)), `Edited ${currentLang} website text: "${editId}"`);
             saveDraft();
         }
     }
 }
 
-// --- Save Draft state to localStorage ---
+// --- Save Draft state ---
 function saveDraft() {
     localStorage.setItem("3m_studio_draft_state", JSON.stringify(draftState));
     
-    // Animate auto-save toaster indicator
     const statusOrb = document.getElementById("tb-save-status-orb");
     const statusText = document.getElementById("tb-save-status-text");
     
@@ -667,38 +936,33 @@ function saveDraft() {
     }
 }
 
-// --- Enable Admin panel, visual helpers, and toolbar ---
+// --- Enable Admin panel ---
 function enableAdminMode(showLogs = true) {
     adminMode = true;
     sessionStorage.setItem("admin_logged_in", "true");
     document.body.classList.add("admin-edit-mode");
     
-    // Load draft state immediately
+    // Apply draft
     applyState(draftState);
 
-    // Slide in toolbar
     const toolbar = document.getElementById("admin-toolbar");
     if (toolbar) toolbar.classList.add("active");
 
-    // Enable editable image overlay listeners
     wireImageEditOverlays();
-
-    // Populate message count badge
     updateMsgCountBadge();
 
     if (showLogs) {
-        addAuditLog("Admin Authorized. visual edit mode Enabled.");
+        addAuditLog("Admin session initialized.");
     }
 }
 
-// --- Disable Admin edit modes, restore public view ---
+// --- Disable Admin edit modes ---
 function disableAdminMode() {
     adminMode = false;
     sessionStorage.setItem("admin_logged_in", "false");
     document.body.classList.remove("admin-edit-mode");
     document.body.classList.remove("admin-layout-mode");
     
-    // Slide out toolbar and side panel
     const toolbar = document.getElementById("admin-toolbar");
     if (toolbar) toolbar.classList.remove("active");
     
@@ -707,13 +971,13 @@ function disableAdminMode() {
 
     disableContentEditable();
     
-    // Reload Live State to drop unsaved drafts visually
+    // Reload Live State to drop draft edits
     applyState(liveState);
     
-    addAuditLog("Admin session Closed. visual edit mode disabled.");
+    addAuditLog("Admin session terminated.");
 }
 
-// --- Wire Click handlers for editable image overlays ---
+// --- Wire Click handlers for editable images ---
 function wireImageEditOverlays() {
     document.querySelectorAll(".img-edit-overlay").forEach(overlay => {
         overlay.onclick = () => {
@@ -726,7 +990,6 @@ function wireImageEditOverlays() {
             const fileName = document.getElementById("img-upload-name");
 
             if (modal) {
-                // Find current image value
                 let currentVal = "";
                 if (targetId.includes(".")) {
                     const [collection, itemId, field] = targetId.split(".");
@@ -747,7 +1010,7 @@ function wireImageEditOverlays() {
     });
 }
 
-// --- Render Drag-and-drop section arrangement list in Side Panel ---
+// --- Render drag-and-drop sections in Side Panel ---
 function renderSidePanelSectionsList() {
     const listContainer = document.getElementById("admin-sections-list");
     if (!listContainer) return;
@@ -760,8 +1023,7 @@ function renderSidePanelSectionsList() {
         item.setAttribute("data-section-name", secName);
         item.setAttribute("data-index", index);
 
-        // Capitalize name
-        const displayTitle = secName.replace(/-/g, ' ');
+        const displayTitle = currentLang === "ar" ? getSectionArabicTitle(secName) : secName.replace(/-/g, ' ');
 
         item.innerHTML = `
             <div class="section-item-info">
@@ -776,7 +1038,6 @@ function renderSidePanelSectionsList() {
         listContainer.appendChild(item);
     });
 
-    // Wire Up/Down arrow button reorder click events
     listContainer.querySelectorAll(".sec-up").forEach(btn => {
         btn.onclick = (e) => {
             e.stopPropagation();
@@ -794,7 +1055,7 @@ function renderSidePanelSectionsList() {
         };
     });
 
-    // Wire HTML5 Drag and Drop events inside the sidebar list
+    // Wire Drag & Drop reordering in the sidebar
     let dragEl = null;
     listContainer.querySelectorAll(".section-list-item").forEach(item => {
         item.ondragstart = (e) => {
@@ -816,13 +1077,12 @@ function renderSidePanelSectionsList() {
                 const dragIndex = parseInt(dragEl.getAttribute("data-index"));
                 const dropIndex = parseInt(item.getAttribute("data-index"));
                 
-                // Reorder sectionOrder array
                 const arr = [...draftState.sectionOrder];
                 const [removed] = arr.splice(dragIndex, 1);
                 arr.splice(dropIndex, 0, removed);
                 
                 draftState.sectionOrder = arr;
-                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Reordered page sections via side panel`);
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Reordered sections via layout panel`);
                 applyState(draftState);
                 renderSidePanelSectionsList();
                 saveDraft();
@@ -831,7 +1091,20 @@ function renderSidePanelSectionsList() {
     });
 }
 
-// --- Swap two sections ---
+function getSectionArabicTitle(secName) {
+    const maps = {
+        "hero": "شاشة الترحيب الرئيسية",
+        "services": "كتالوج خدماتنا",
+        "portfolio": "معرض أعمال الوكالة",
+        "why-choose-us": "لماذا تختار 3M Studio",
+        "statistics": "لوحة الإحصائيات والأرقام",
+        "testimonials": "تقييمات مجتمع الألعاب",
+        "faq": "الأسئلة والأجوبة الشائعة",
+        "contact": "قسم اتصل بنا"
+    };
+    return maps[secName] || secName;
+}
+
 function swapSections(idx1, idx2) {
     if (idx1 < 0 || idx1 >= draftState.sectionOrder.length || idx2 < 0 || idx2 >= draftState.sectionOrder.length) return;
     
@@ -841,15 +1114,551 @@ function swapSections(idx1, idx2) {
     arr[idx2] = temp;
     
     draftState.sectionOrder = arr;
-    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Moved section [${temp}] to index ${idx2}`);
+    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Moved section ${temp} to index ${idx2}`);
     applyState(draftState);
     renderSidePanelSectionsList();
     saveDraft();
 }
 
-// --- Wire UI Events (Clicks, inputs, forms) ---
+// --- Dynamic Switchers Click Triggers ---
+function updateLangUIIndicators() {
+    const langBtn = document.getElementById("lang-toggle-btn");
+    if (langBtn) {
+        langBtn.innerHTML = currentLang === "ar" ? 
+            `<span class="flag-icon">🇪🇬</span> <span class="lang-name">العربية</span>` : 
+            `<span class="flag-icon">🇺🇸</span> <span class="lang-name">English</span>`;
+    }
+    
+    // Set active option in dropdown
+    document.querySelectorAll(".lang-option-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
+    });
+}
+
+function updateCurrencyUIIndicators() {
+    const currBtn = document.getElementById("currency-toggle-btn");
+    if (currBtn) {
+        currBtn.innerHTML = `<span class="currency-name">${currentCurrency}</span>`;
+    }
+
+    document.querySelectorAll(".currency-option-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-currency") === currentCurrency);
+    });
+}
+
+// --- Toggle active language ---
+function setLanguage(lang) {
+    if (lang === currentLang) return;
+    currentLang = lang;
+    localStorage.setItem("3m_studio_lang", currentLang);
+
+    // Apply translations
+    updateLangUIIndicators();
+    applyState(adminMode ? draftState : liveState);
+    
+    addAuditLog(`Language switched to ${lang.toUpperCase()}`);
+}
+
+// --- Toggle active currency ---
+function setCurrency(currency) {
+    if (currency === currentCurrency) return;
+    currentCurrency = currency;
+    localStorage.setItem("3m_studio_currency", currentCurrency);
+
+    // Update UI
+    updateCurrencyUIIndicators();
+    
+    // Re-render services & prices
+    const langDatabase = adminMode ? draftState[currentLang] : liveState[currentLang];
+    renderServices(langDatabase.services);
+
+    addAuditLog(`Currency switched to ${currency}`);
+}
+
+// --- Discord simulated oauth authorization logic ---
+function triggerDiscordMockOAuth() {
+    const modal = document.getElementById("discord-auth-modal");
+    if (modal) {
+        modal.classList.add("active");
+    }
+}
+
+function applyDiscordLoginState(user) {
+    const authArea = document.getElementById("discord-auth-area");
+    const nameLabel = document.getElementById("user-display-name");
+    const initialLabel = document.getElementById("user-avatar-initial");
+
+    if (authArea && nameLabel && initialLabel) {
+        nameLabel.innerText = user.username;
+        initialLabel.innerText = user.avatarLetter;
+        authArea.classList.add("logged-in");
+        
+        // If purchase form is open, autofill discord username
+        const purchaseDiscord = document.getElementById("purchase-discord");
+        if (purchaseDiscord) purchaseDiscord.value = user.username;
+    }
+}
+
+function handleDiscordLogout() {
+    localStorage.removeItem("discord_user");
+    const authArea = document.getElementById("discord-auth-area");
+    if (authArea) {
+        authArea.classList.remove("logged-in");
+    }
+    
+    // Close user orders modal if open
+    document.getElementById("user-orders-modal").classList.remove("active");
+    addAuditLog("Discord account logged out.");
+}
+
+// --- Store Purchase Request modal handlers ---
+function openPurchaseModal(prodId) {
+    const srv = draftState[currentLang].services.find(x => x.id === prodId);
+    if (!srv) return;
+
+    const modal = document.getElementById("purchase-modal");
+    const title = document.getElementById("purchase-product-name");
+    const price = document.getElementById("purchase-product-price");
+    
+    const nameInput = document.getElementById("purchase-name");
+    const emailInput = document.getElementById("purchase-email");
+    const discordInput = document.getElementById("purchase-discord");
+    const detailsInput = document.getElementById("purchase-details");
+    
+    const form = document.getElementById("purchase-request-form");
+    const successMsg = document.getElementById("purchase-success-msg");
+
+    if (modal && title && price) {
+        title.innerText = srv.name;
+        title.setAttribute("data-target-prod-id", prodId);
+        price.innerText = getFormattedPrice(srv.priceBase);
+        
+        // Autofill discord tag if logged in
+        const user = localStorage.getItem("discord_user");
+        if (user) {
+            discordInput.value = JSON.parse(user).username;
+        } else {
+            discordInput.value = "";
+        }
+        
+        // Reset form view
+        form.style.display = "flex";
+        successMsg.classList.remove("active");
+        
+        modal.classList.add("active");
+    }
+}
+
+// --- Search and filter Orders in Admin Panel ---
+function renderOrdersList(filterQuery = "") {
+    const container = document.getElementById("orders-list-container");
+    if (!container) return;
+
+    const q = filterQuery.toLowerCase().trim();
+    const filteredOrders = orders.filter(o => 
+        o.id.toLowerCase().includes(q) || 
+        o.name.toLowerCase().includes(q) || 
+        o.email.toLowerCase().includes(q) || 
+        o.discord.toLowerCase().includes(q) || 
+        o.service.toLowerCase().includes(q)
+    );
+
+    if (filteredOrders.length === 0) {
+        container.innerHTML = `<div class="no-leads">لا يوجد طلبات شراء مطابقة حاليًا.</div>`;
+        return;
+    }
+
+    container.innerHTML = filteredOrders.map(o => `
+        <div class="lead-card" data-order-id="${o.id}">
+            <div class="lead-card-header">
+                <div class="lead-name">
+                    <h5>${o.name} <span style="font-family:monospace; color:var(--admin-color); margin:0 8px;">${o.id}</span></h5>
+                    <span class="lead-email">${o.email} | ديسكورد: ${o.discord} | التاريخ: ${o.timestamp}</span>
+                </div>
+                <div class="lead-card-actions">
+                    <span class="lead-tag">${o.price}</span>
+                    <select class="order-status-selector ${o.status || 'pending'}" data-ord-id="${o.id}">
+                        <option value="pending" ${o.status === 'pending' ? 'selected' : ''}>معلق / Pending</option>
+                        <option value="progress" ${o.status === 'progress' ? 'selected' : ''}>قيد التنفيذ / Progress</option>
+                        <option value="completed" ${o.status === 'completed' ? 'selected' : ''}>مكتمل / Completed</option>
+                        <option value="cancelled" ${o.status === 'cancelled' ? 'selected' : ''}>ملغي / Cancelled</option>
+                    </select>
+                    <button class="table-btn table-btn-delete btn-del-ord" data-ord-id="${o.id}" style="padding:4px 8px;">حذف</button>
+                </div>
+            </div>
+            <strong style="font-size:0.85rem; color:#ffffff; display:block; margin:6px 0;">المنتج المطلوب: ${o.service}</strong>
+            <p class="lead-message">"${o.details}"</p>
+        </div>
+    `).join("");
+
+    // Wire status selector shifts
+    container.querySelectorAll(".order-status-selector").forEach(sel => {
+        sel.onchange = () => {
+            const ordId = sel.getAttribute("data-ord-id");
+            const newStatus = sel.value;
+            
+            // Update class
+            sel.className = `order-status-selector ${newStatus}`;
+            
+            // Update order object
+            const ord = orders.find(x => x.id === ordId);
+            if (ord) {
+                ord.status = newStatus;
+                localStorage.setItem("3m_studio_orders", JSON.stringify(orders));
+                addAuditLog(`Updated order status [${ordId}] to ${newStatus.toUpperCase()}`);
+            }
+        };
+    });
+
+    // Wire delete button clicks
+    container.querySelectorAll(".btn-del-ord").forEach(btn => {
+        btn.onclick = () => {
+            const ordId = btn.getAttribute("data-ord-id");
+            if (confirm("هل أنت متأكد من رغبتك بحذف طلب الشراء هذا نهائيًا؟")) {
+                const idx = orders.findIndex(x => x.id === ordId);
+                if (idx > -1) {
+                    orders.splice(idx, 1);
+                    localStorage.setItem("3m_studio_orders", JSON.stringify(orders));
+                    renderOrdersList(filterQuery);
+                    addAuditLog(`Deleted order request code [${ordId}]`);
+                }
+            }
+        };
+    });
+}
+
+// --- Render Logged User specific order history ---
+function renderUserOrdersHistory(discordUsername) {
+    const list = document.getElementById("user-orders-list");
+    if (!list) return;
+
+    // Filter orders matching current username
+    const userOrders = orders.filter(o => o.discord.toLowerCase() === discordUsername.toLowerCase());
+
+    const modalTitle = document.getElementById("user-orders-modal-title");
+    const avatarLarge = document.getElementById("user-orders-avatar");
+    const usernameLabel = document.getElementById("user-orders-username");
+
+    if (avatarLarge && usernameLabel) {
+        usernameLabel.innerText = discordUsername;
+        avatarLarge.innerText = discordUsername.charAt(0).toUpperCase();
+    }
+
+    if (userOrders.length === 0) {
+        list.innerHTML = `
+            <div class="no-history">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:48px; height:48px; color:var(--text-dark); margin-bottom:12px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <p>${currentLang === 'ar' ? 'لا يوجد طلبات شراء مسجلة لهذا الحساب حاليًا.' : 'No purchases found for this Discord user account yet.'}</p>
+            </div>
+        `;
+        return;
+    }
+
+    list.innerHTML = userOrders.map(o => `
+        <div class="history-order-card">
+            <div class="history-order-header">
+                <span class="history-order-title">${o.service}</span>
+                <span class="history-order-id">${o.id}</span>
+            </div>
+            <div class="history-order-meta">
+                <span class="history-order-price">${o.price}</span>
+                <span class="order-status-badge ${o.status || 'pending'}">${o.status === 'pending' ? 'معلق' : o.status === 'progress' ? 'قيد التنفيذ' : o.status === 'completed' ? 'مكتمل' : 'ملغي'}</span>
+            </div>
+        </div>
+    `).join("");
+}
+
+// --- Export Orders database to CSV file download ---
+function exportOrdersToCSV() {
+    if (orders.length === 0) {
+        alert("لا يوجد طلبات شراء حالية لتصديرها.");
+        return;
+    }
+
+    // Define CSV Headers
+    const headers = ["Order ID", "Customer Name", "Email Address", "Discord Username", "Service Title", "Amount Paid", "Order Status", "Timestamp"];
+    
+    // Map rows
+    const rows = orders.map(o => [
+        o.id,
+        o.name.replace(/,/g, ' '),
+        o.email,
+        o.discord,
+        o.service.replace(/,/g, ' '),
+        o.price.replace(/,/g, ' '),
+        o.status || 'pending',
+        o.timestamp
+    ]);
+
+    // Build CSV string
+    const csvContent = [
+        headers.join(","),
+        ...rows.map(r => r.join(","))
+    ].join("\n");
+
+    // Add Unicode BOM for Excel Arabic layout compatibility
+    const BOM = "\uFEFF";
+    const blob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `3m_studio_orders_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    addAuditLog("Exported purchase requests log as CSV.");
+}
+
+// --- Wire all UI interactive events ---
 function wireEvents() {
-    // 1. Search Bar command activation
+    // 1. Language Dropdown switcher clicks
+    const langBtn = document.getElementById("lang-toggle-btn");
+    const langDropdown = document.getElementById("lang-dropdown");
+    if (langBtn && langDropdown) {
+        langBtn.onclick = (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle("active");
+            document.getElementById("currency-dropdown").classList.remove("active");
+        };
+
+        langDropdown.querySelectorAll(".lang-option-btn").forEach(btn => {
+            btn.onclick = () => {
+                const targetLang = btn.getAttribute("data-lang");
+                setLanguage(targetLang);
+                langDropdown.classList.remove("active");
+            };
+        });
+    }
+
+    // 2. Currency Dropdown switcher clicks
+    const currBtn = document.getElementById("currency-toggle-btn");
+    const currDropdown = document.getElementById("currency-dropdown");
+    if (currBtn && currDropdown) {
+        currBtn.onclick = (e) => {
+            e.stopPropagation();
+            currDropdown.classList.toggle("active");
+            langDropdown.classList.remove("active");
+        };
+
+        currDropdown.querySelectorAll(".currency-option-btn").forEach(btn => {
+            btn.onclick = () => {
+                const targetCurr = btn.getAttribute("data-currency");
+                setCurrency(targetCurr);
+                currDropdown.classList.remove("active");
+            };
+        });
+    }
+
+    // Click outside switches close dropdowns
+    document.addEventListener("click", () => {
+        if (langDropdown) langDropdown.classList.remove("active");
+        if (currDropdown) currDropdown.classList.remove("active");
+    });
+
+    // 3. Discord Mock popup events
+    const discordLoginBtn = document.getElementById("discord-login-btn");
+    const discordAuthModal = document.getElementById("discord-auth-modal");
+    const discordCancel = document.getElementById("discord-oauth-cancel");
+    const discordAuth = document.getElementById("discord-oauth-auth");
+
+    if (discordLoginBtn) {
+        discordLoginBtn.onclick = triggerDiscordMockOAuth;
+    }
+    if (discordCancel) {
+        discordCancel.onclick = () => discordAuthModal.classList.remove("active");
+    }
+    if (discordAuth) {
+        discordAuth.onclick = () => {
+            const inputName = document.getElementById("discord-input-username").value.trim() || "GamerPro#1337";
+            const mockUser = {
+                id: `disc-${Math.floor(Math.random() * 9000000000) + 1000000000}`,
+                username: inputName,
+                avatarLetter: inputName.charAt(0).toUpperCase()
+            };
+            
+            // Save locally
+            localStorage.setItem("discord_user", JSON.stringify(mockUser));
+            applyDiscordLoginState(mockUser);
+            
+            addAuditLog(`Discord Login simulated: Authorized as ${mockUser.username}`);
+            discordAuthModal.classList.remove("active");
+        };
+    }
+
+    // Discord logout click
+    const btnLogout = document.getElementById("btn-discord-logout");
+    if (btnLogout) {
+        btnLogout.onclick = handleDiscordLogout;
+    }
+
+    // Show orders history modal
+    const btnHistory = document.getElementById("btn-show-orders-history");
+    const userOrdersModal = document.getElementById("user-orders-modal");
+    const userOrdersClose = document.getElementById("user-orders-close");
+
+    if (btnHistory && userOrdersModal) {
+        btnHistory.onclick = () => {
+            const user = localStorage.getItem("discord_user");
+            if (user) {
+                const parsedUser = JSON.parse(user);
+                renderUserOrdersHistory(parsedUser.username);
+                userOrdersModal.classList.add("active");
+            }
+        };
+    }
+    if (userOrdersClose) {
+        userOrdersClose.onclick = () => userOrdersModal.classList.remove("active");
+    }
+
+    // 4. Contact Form leads handler
+    const contactForm = document.getElementById("contact-form");
+    const successMsg = document.getElementById("form-success-msg");
+    const resetFormBtn = document.getElementById("form-reset-btn");
+
+    if (contactForm && successMsg) {
+        contactForm.onsubmit = (e) => {
+            e.preventDefault();
+            
+            const newLead = {
+                id: `lead-${Date.now()}`,
+                name: document.getElementById("form-name").value.trim(),
+                email: document.getElementById("form-email").value.trim(),
+                discord: document.getElementById("form-discord").value.trim(),
+                service: document.getElementById("form-service").value,
+                message: document.getElementById("form-message").value.trim(),
+                timestamp: new Date().toLocaleString()
+            };
+
+            leads.unshift(newLead);
+            localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
+            updateMsgCountBadge();
+
+            // SMTP SIMULATION (Email logs)
+            // 1. Notification to Admin
+            const adminEmailBody = `
+                New Contact Form Inquiry!
+                ------------------------
+                Client Name: ${newLead.name}
+                Client Email: ${newLead.email}
+                Discord ID: ${newLead.discord}
+                Service Chosen: ${newLead.service}
+                Message Content:
+                "${newLead.message}"
+            `;
+            triggerSMTPSimulation("omarsaber6545@gmail.com", `Inquiry: ${newLead.service} - ${newLead.name}`, adminEmailBody);
+            
+            // 2. Receipt confirmation to client
+            const clientEmailBody = `
+                Dear ${newLead.name},
+                
+                Thank you for contacting 3M Studio! This is an automated email receipt to confirm we have received your request for: "${newLead.service}".
+                
+                One of our representatives will contact you shortly on Discord (${newLead.discord}) or via email.
+                
+                Best Regards,
+                3M Studio Technical Team
+            `;
+            triggerSMTPSimulation(newLead.email, "Inquiry Received | 3M Studio", clientEmailBody);
+
+            addAuditLog(`Contact Message submitted by ${newLead.name}. simulated emails dispatched.`);
+            
+            contactForm.reset();
+            contactForm.style.display = "none";
+            successMsg.classList.add("active");
+        };
+
+        if (resetFormBtn) {
+            resetFormBtn.onclick = () => {
+                successMsg.classList.remove("active");
+                contactForm.style.display = "flex";
+            };
+        }
+    }
+
+    // 5. Purchase request form submissions
+    const purchaseModal = document.getElementById("purchase-modal");
+    const purchaseClose = document.getElementById("purchase-modal-close");
+    const purchaseForm = document.getElementById("purchase-request-form");
+    const purchaseSuccess = document.getElementById("purchase-success-msg");
+    const purchaseSuccessCloseBtn = document.getElementById("purchase-success-close");
+
+    if (purchaseClose) purchaseClose.onclick = () => purchaseModal.classList.remove("active");
+
+    if (purchaseForm && purchaseSuccess) {
+        purchaseForm.onsubmit = (e) => {
+            e.preventDefault();
+
+            const prodName = document.getElementById("purchase-product-name").innerText;
+            const prodPrice = document.getElementById("purchase-product-price").innerText;
+            const clientName = document.getElementById("purchase-name").value.trim();
+            const clientEmail = document.getElementById("purchase-email").value.trim();
+            const clientDiscord = document.getElementById("purchase-discord").value.trim();
+            const clientDetails = document.getElementById("purchase-details").value.trim();
+
+            const orderId = `#3M-${Math.floor(10000 + Math.random() * 90000)}`;
+
+            const newOrder = {
+                id: orderId,
+                name: clientName,
+                email: clientEmail,
+                discord: clientDiscord,
+                service: prodName,
+                details: clientDetails,
+                price: prodPrice,
+                status: 'pending',
+                timestamp: new Date().toLocaleString()
+            };
+
+            orders.unshift(newOrder);
+            localStorage.setItem("3m_studio_orders", JSON.stringify(orders));
+
+            // SMTP SIMULATION (Email logs)
+            // 1. Notification to Admin
+            const adminOrderBody = `
+                Urgent: New Purchase Request ${orderId}!
+                --------------------------------------
+                Customer Name: ${newOrder.name}
+                Customer Email: ${newOrder.email}
+                Discord Username: ${newOrder.discord}
+                Product Selected: ${newOrder.service}
+                Agreed price: ${newOrder.price}
+                Additional Instructions:
+                "${newOrder.details}"
+            `;
+            triggerSMTPSimulation("omarsaber6545@gmail.com", `Order Alert ${orderId} - ${newOrder.service}`, adminOrderBody);
+            
+            // 2. Confirmation to Customer
+            const clientOrderBody = `
+                Dear ${newOrder.name},
+                
+                Thank you for your order! This email confirms your purchase request for: "${newOrder.service}" has been received.
+                
+                Your Unique Order ID is: ${orderId}
+                Product Price: ${newOrder.price}
+                
+                Our technical team will reach out to verify the features of your order shortly.
+                
+                Best Regards,
+                3M Studio Billing
+            `;
+            triggerSMTPSimulation(newOrder.email, `Order Confirmation ${orderId} | 3M Studio`, clientOrderBody);
+
+            addAuditLog(`Purchase Request order created: [${orderId}] for ${newOrder.service}`);
+
+            // Show success screen with Order ID
+            document.getElementById("purchase-order-id").innerText = orderId;
+            purchaseForm.style.display = "none";
+            purchaseSuccess.classList.add("active");
+        };
+
+        if (purchaseSuccessCloseBtn) {
+            purchaseSuccessCloseBtn.onclick = () => purchaseModal.classList.remove("active");
+        }
+    }
+
+    // 6. Search Bar & Admin auth triggers
     const searchBar = document.getElementById("search-bar");
     const searchBtn = document.getElementById("search-btn");
     const searchDropdown = document.getElementById("search-results-dropdown");
@@ -869,12 +1678,10 @@ function wireEvents() {
         searchBar.oninput = () => {
             const val = searchBar.value.trim().toLowerCase();
             if (val === "3m studio admin") {
-                // Secret Command Matched!
                 searchBar.value = "";
                 searchBar.parentElement.classList.remove("active");
                 searchDropdown.classList.remove("active");
                 
-                // Trigger Admin login Modal
                 const modal = document.getElementById("admin-login-modal");
                 if (modal) modal.classList.add("active");
                 const passwordInput = document.getElementById("admin-password");
@@ -883,8 +1690,9 @@ function wireEvents() {
                     passwordInput.focus();
                 }
             } else if (val.length >= 2) {
-                // Normal search query -> Filter services
-                const matches = draftState.services.filter(s => 
+                // Search services matching query
+                const langDatabase = draftState[currentLang] || draftState["ar"];
+                const matches = langDatabase.services.filter(s => 
                     s.name.toLowerCase().includes(val) || 
                     s.desc.toLowerCase().includes(val)
                 );
@@ -893,12 +1701,11 @@ function wireEvents() {
                     searchDropdown.innerHTML = matches.map(m => `
                         <a href="#services" class="search-result-item" data-tab-link="${m.category}">
                             <strong>${m.name}</strong>
-                            <span>${m.price} - ${m.desc.substring(0, 50)}...</span>
+                            <span>${getFormattedPrice(m.priceBase)} - ${m.desc.substring(0, 50)}...</span>
                         </a>
                     `).join("");
                     searchDropdown.classList.add("active");
 
-                    // Tab redirection triggers on search item click
                     searchDropdown.querySelectorAll(".search-result-item").forEach(item => {
                         item.onclick = () => {
                             const tabCat = item.getAttribute("data-tab-link");
@@ -910,7 +1717,7 @@ function wireEvents() {
                         };
                     });
                 } else {
-                    searchDropdown.innerHTML = `<div class="search-result-item">No service matching "${val}"</div>`;
+                    searchDropdown.innerHTML = `<div class="search-result-item">${currentLang === 'ar' ? 'لا يوجد نتائج مطابقة' : 'No matches found'}</div>`;
                     searchDropdown.classList.add("active");
                 }
             } else {
@@ -919,35 +1726,25 @@ function wireEvents() {
         };
     }
 
-    // Hide search dropdown on click outside
-    document.addEventListener("click", (e) => {
-        if (searchDropdown && !e.target.closest(".search-container")) {
-            searchDropdown.classList.remove("active");
-        }
-    });
-
-    // 2. Admin Authentication handlers
+    // 7. Admin auth submissions
     const modalLogin = document.getElementById("admin-login-modal");
     const closeLogin = document.getElementById("admin-login-close");
     const submitLogin = document.getElementById("admin-login-submit");
     const passwordLogin = document.getElementById("admin-password");
     const errorLogin = document.getElementById("admin-error-text");
 
-    if (closeLogin) {
-        closeLogin.onclick = () => modalLogin.classList.remove("active");
-    }
-    
+    if (closeLogin) closeLogin.onclick = () => modalLogin.classList.remove("active");
+
     if (submitLogin && passwordLogin) {
         const verifyPassword = () => {
-            const pwd = passwordLogin.value;
-            if (pwd === "maloka") {
+            if (passwordLogin.value === "maloka") {
                 errorLogin.style.display = "none";
                 modalLogin.classList.remove("active");
                 enableAdminMode(true);
             } else {
                 errorLogin.style.display = "block";
                 passwordLogin.select();
-                addAuditLog("Failed authorization attempt.", true);
+                addAuditLog("Access Denied - incorrect password attempt.", true);
             }
         };
 
@@ -957,7 +1754,7 @@ function wireEvents() {
         };
     }
 
-    // 3. Floating Navbar Scroll Reactions & Mobile drawer
+    // 8. Navbar Scroll Reactions
     const header = document.getElementById("main-header");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -967,6 +1764,7 @@ function wireEvents() {
         }
     });
 
+    // Mobile Hamburger drawer toggles
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
     if (hamburger && navMenu) {
@@ -982,7 +1780,7 @@ function wireEvents() {
         });
     }
 
-    // 4. Services Tab Switchers
+    // Tabs switchers
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
@@ -995,7 +1793,7 @@ function wireEvents() {
         };
     });
 
-    // 5. Portfolio Category Filter Switchers
+    // Portfolio filters
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -1014,47 +1812,7 @@ function wireEvents() {
         };
     });
 
-    // 6. Contact Form submissions
-    const contactForm = document.getElementById("contact-form");
-    const successMsg = document.getElementById("form-success-msg");
-    const resetFormBtn = document.getElementById("form-reset-btn");
-
-    if (contactForm && successMsg) {
-        contactForm.onsubmit = (e) => {
-            e.preventDefault();
-            
-            const newLead = {
-                id: `lead-${Date.now()}`,
-                name: document.getElementById("form-name").value.trim(),
-                email: document.getElementById("form-email").value.trim(),
-                service: document.getElementById("form-service").value,
-                message: document.getElementById("form-message").value.trim(),
-                timestamp: new Date().toLocaleString()
-            };
-
-            // Save inquiry
-            leads.unshift(newLead);
-            localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
-            updateMsgCountBadge();
-
-            // Log activity
-            addAuditLog(`Received form lead from ${newLead.name} regarding "${newLead.service}"`);
-
-            // Clear form and display success screen
-            contactForm.reset();
-            contactForm.style.display = "none";
-            successMsg.classList.add("active");
-        };
-
-        if (resetFormBtn) {
-            resetFormBtn.onclick = () => {
-                successMsg.classList.remove("active");
-                contactForm.style.display = "flex";
-            };
-        }
-    }
-
-    // 7. Toolbar action handlers
+    // 9. Toolbar action handlers
     const tbUndo = document.getElementById("tb-undo");
     const tbRedo = document.getElementById("tb-redo");
     const tbText = document.getElementById("tb-toggle-text");
@@ -1094,17 +1852,15 @@ function wireEvents() {
 
     if (tbText) {
         tbText.onclick = () => {
-            // Edit Text is default
             document.body.classList.remove("admin-layout-mode");
             tbLayout.classList.remove("active-mode");
             tbText.classList.add("active-mode");
-            addAuditLog("Text Edit mode activated.");
+            addAuditLog("Visual editing mode selected.");
         };
     }
 
     if (tbLayout) {
         tbLayout.onclick = () => {
-            // Toggle side panel and active layout highlighting
             const sidePanel = document.getElementById("admin-side-panel");
             if (sidePanel) {
                 sidePanel.classList.add("active");
@@ -1113,7 +1869,7 @@ function wireEvents() {
             tbText.classList.remove("active-mode");
             tbLayout.classList.add("active-mode");
             document.body.classList.add("admin-layout-mode");
-            addAuditLog("Layout & theme visual settings opened.");
+            addAuditLog("Theme customizer panel toggled.");
         };
     }
 
@@ -1135,7 +1891,7 @@ function wireEvents() {
                 renderServicesManagerTable();
                 renderPortfolioManagerTable();
                 renderFAQManagerTable();
-                addAuditLog("Products & portfolio catalog modal opened.");
+                addAuditLog("Catalog manager modals opened.");
             }
         };
     }
@@ -1149,7 +1905,9 @@ function wireEvents() {
             if (modal) {
                 modal.classList.add("active");
                 renderLeadsList();
-                addAuditLog("Inbox manager opened.");
+                renderOrdersList();
+                renderSMTPLogs();
+                addAuditLog("Inbound requests dashboard opened.");
             }
         };
     }
@@ -1163,7 +1921,6 @@ function wireEvents() {
             if (modal) {
                 modal.classList.add("active");
                 
-                // Populate log console
                 const logConsole = document.getElementById("logs-console-container");
                 if (logConsole) {
                     logConsole.innerHTML = auditLogs.map(l => `
@@ -1174,7 +1931,7 @@ function wireEvents() {
                     `).join("");
                     logConsole.scrollTop = logConsole.scrollHeight;
                 }
-                addAuditLog("Audit history log console opened.");
+                addAuditLog("Audit reports console accessed.");
             }
         };
     }
@@ -1184,41 +1941,39 @@ function wireEvents() {
 
     if (tbDiscard) {
         tbDiscard.onclick = () => {
-            if (confirm("Are you sure you want to discard ALL draft edits and restore the last published site version?")) {
+            if (confirm("هل تود بالتأكيد التراجع عن كافة التغييرات الحالية واستعادة النسخة المنشورة؟")) {
                 draftState = JSON.parse(JSON.stringify(liveState));
                 localStorage.setItem("3m_studio_draft_state", JSON.stringify(draftState));
                 
-                // Clear history
                 historyStack = [JSON.parse(JSON.stringify(draftState))];
                 historyIndex = 0;
                 updateUndoRedoButtons();
 
                 applyState(draftState);
-                addAuditLog("Draft discarded. Restored last published state.");
-                alert("Draft discarded successfully.");
+                addAuditLog("Draft discarded. Reloaded last published state.");
+                alert("تم تجاهل التعديلات بنجاح.");
             }
         };
     }
 
     if (tbPublish) {
         tbPublish.onclick = () => {
-            // Write draft to live
             liveState = JSON.parse(JSON.stringify(draftState));
             localStorage.setItem("3m_studio_live_state", JSON.stringify(liveState));
-            addAuditLog("Changes Published. website successfully updated for visitors.");
-            alert("Congratulations! Your changes have been successfully published and are now live.");
+            addAuditLog("Site Published. Changes are now visible to everyone.");
+            alert("تم نشر كافة التعديلات بنجاح وأصبحت مرئية الآن لزوار موقعك.");
         };
     }
 
     if (tbExit) {
         tbExit.onclick = () => {
-            if (confirm("Exit visual editor? Unpublished changes will remain saved as a draft.")) {
+            if (confirm("هل ترغب بالخروج من لوحة التحكم؟")) {
                 disableAdminMode();
             }
         };
     }
 
-    // 8. Theme Customizer Color Inputs
+    // 10. Theme Colors modifiers
     const colorPrimary = document.getElementById("color-primary");
     const textPrimary = document.getElementById("color-primary-text");
     const colorSecondary = document.getElementById("color-secondary");
@@ -1245,22 +2000,20 @@ function wireEvents() {
     if (colorPrimary) {
         colorPrimary.oninput = () => { textPrimary.value = colorPrimary.value; updatePrimary(colorPrimary.value); };
         textPrimary.onchange = () => { if (/^#[0-9A-F]{6}$/i.test(textPrimary.value)) { colorPrimary.value = textPrimary.value; updatePrimary(textPrimary.value); } };
-        
-        // Push state to history stack on change end
-        colorPrimary.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Changed theme primary color to ${colorPrimary.value}`);
+        colorPrimary.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Primary theme color changed to ${colorPrimary.value}`);
     }
     if (colorSecondary) {
         colorSecondary.oninput = () => { textSecondary.value = colorSecondary.value; updateSecondary(colorSecondary.value); };
         textSecondary.onchange = () => { if (/^#[0-9A-F]{6}$/i.test(textSecondary.value)) { colorSecondary.value = textSecondary.value; updateSecondary(textSecondary.value); } };
-        colorSecondary.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Changed theme secondary color to ${colorSecondary.value}`);
+        colorSecondary.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Secondary theme color changed to ${colorSecondary.value}`);
     }
     if (colorBg) {
         colorBg.oninput = () => { textBg.value = colorBg.value; updateBg(colorBg.value); };
         textBg.onchange = () => { if (/^#[0-9A-F]{6}$/i.test(textBg.value)) { colorBg.value = textBg.value; updateBg(textBg.value); } };
-        colorBg.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Changed theme background color to ${colorBg.value}`);
+        colorBg.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Theme background color changed to ${colorBg.value}`);
     }
 
-    // 9. Image Asset Updater Modal Submission
+    // 11. Image Asset submission in Modal
     const imgModal = document.getElementById("admin-image-modal");
     const imgClose = document.getElementById("admin-image-close");
     const imgSubmit = document.getElementById("admin-image-submit");
@@ -1292,11 +2045,10 @@ function wireEvents() {
             const inputUrl = document.getElementById("img-source-url").value.trim();
             const localSrc = imgPreview.src;
             
-            // Choose local base64 if set, otherwise URL
             let finalSrc = (imgFile.files && imgFile.files.length > 0) ? localSrc : inputUrl;
 
             if (!finalSrc) {
-                alert("Please select a file or enter an image URL.");
+                alert("يرجى اختيار ملف صورة أو تزويدنا برابط إلكتروني.");
                 return;
             }
 
@@ -1305,21 +2057,20 @@ function wireEvents() {
                 const item = draftState[collection].find(x => x.id === itemId);
                 if (item) {
                     item[field] = finalSrc;
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Updated asset image for portfolio item ${itemId}`);
+                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Updated showcase image asset for [${itemId}]`);
                     applyState(draftState);
                     saveDraft();
                 }
             }
 
-            // Clear modal fields and close
             imgFile.value = "";
             document.getElementById("img-source-url").value = "";
             imgModal.classList.remove("active");
         };
     }
 
-    // 10. Products Catalog Form Submissions
-    // Services
+    // 12. Manager Catalog forms
+    // Services Adding / Editing
     const btnAddService = document.getElementById("btn-add-service");
     const serviceFormModal = document.getElementById("admin-service-edit-modal");
     const serviceFormClose = document.getElementById("admin-service-form-close");
@@ -1327,7 +2078,7 @@ function wireEvents() {
 
     if (btnAddService) {
         btnAddService.onclick = () => {
-            document.getElementById("service-modal-title").innerText = "Add New Service Offering";
+            document.getElementById("service-modal-title").innerText = "إضافة خدمة جديدة للكتالوج";
             document.getElementById("service-form-id").value = "";
             serviceForm.reset();
             serviceFormModal.classList.add("active");
@@ -1341,33 +2092,41 @@ function wireEvents() {
             const id = document.getElementById("service-form-id").value;
             const category = document.getElementById("service-form-category").value;
             const name = document.getElementById("service-form-name").value.trim();
-            const price = document.getElementById("service-form-price").value.trim();
+            const priceVal = parseFloat(document.getElementById("service-form-price").value) || 0;
             const desc = document.getElementById("service-form-desc").value.trim();
             const features = document.getElementById("service-form-features").value.trim().split("\n").map(f => f.trim()).filter(Boolean);
 
             if (id) {
-                // Editing existing service
-                const srv = draftState.services.find(x => x.id === id);
-                if (srv) {
-                    srv.category = category;
-                    srv.name = name;
-                    srv.price = price;
-                    srv.desc = desc;
-                    srv.features = features;
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified service item details [${id}]`);
+                // Editing (Apply to both Arabic & English for consistency, translation placeholders used)
+                const srvAr = draftState.ar.services.find(x => x.id === id);
+                if (srvAr) {
+                    srvAr.category = category;
+                    srvAr.name = currentLang === 'ar' ? name : srvAr.name;
+                    srvAr.priceBase = priceVal;
+                    srvAr.desc = currentLang === 'ar' ? desc : srvAr.desc;
+                    srvAr.features = currentLang === 'ar' ? features : srvAr.features;
                 }
+                const srvEn = draftState.en.services.find(x => x.id === id);
+                if (srvEn) {
+                    srvEn.category = category;
+                    srvEn.name = currentLang === 'en' ? name : srvEn.name;
+                    srvEn.priceBase = priceVal;
+                    srvEn.desc = currentLang === 'en' ? desc : srvEn.desc;
+                    srvEn.features = currentLang === 'en' ? features : srvEn.features;
+                }
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified service item base properties [${id}]`);
             } else {
-                // Adding new service
-                const newSrv = {
-                    id: `srv-custom-${Date.now()}`,
-                    category: category,
-                    name: name,
-                    price: price,
-                    desc: desc,
-                    features: features
-                };
-                draftState.services.push(newSrv);
-                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Added new service item: "${name}"`);
+                // Adding new product
+                const newId = `srv-custom-${Date.now()}`;
+                
+                // Add default placeholders for both langs
+                const newSrvAr = { id: newId, category: category, name: name, priceBase: priceVal, desc: desc, features: features };
+                const newSrvEn = { id: newId, category: category, name: name, priceBase: priceVal, desc: desc, features: features }; // Prefills with input
+                
+                draftState.ar.services.push(newSrvAr);
+                draftState.en.services.push(newSrvEn);
+                
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Added new service: "${name}"`);
             }
 
             applyState(draftState);
@@ -1377,7 +2136,7 @@ function wireEvents() {
         };
     }
 
-    // Portfolio Form
+    // Portfolio Adding / Editing
     const btnAddPortfolio = document.getElementById("btn-add-portfolio");
     const portfolioFormModal = document.getElementById("admin-portfolio-edit-modal");
     const portfolioFormClose = document.getElementById("admin-portfolio-form-close");
@@ -1385,7 +2144,7 @@ function wireEvents() {
 
     if (btnAddPortfolio) {
         btnAddPortfolio.onclick = () => {
-            document.getElementById("portfolio-modal-title").innerText = "Add Portfolio Work Showcase";
+            document.getElementById("portfolio-modal-title").innerText = "إضافة عمل معرض جديد";
             document.getElementById("portfolio-form-id").value = "";
             portfolioForm.reset();
             portfolioFormModal.classList.add("active");
@@ -1404,25 +2163,34 @@ function wireEvents() {
             const tag = document.getElementById("portfolio-form-tag").value.trim();
 
             if (id) {
-                // Editing
                 const port = draftState.portfolio.find(x => x.id === id);
                 if (port) {
                     port.category = category;
-                    port.title = title;
-                    port.desc = desc;
                     port.img = img;
-                    port.tag = tag;
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified portfolio work details [${id}]`);
+                    
+                    if (currentLang === 'ar') {
+                        port.title_ar = title;
+                        port.desc_ar = desc;
+                        port.tag_ar = tag;
+                    } else {
+                        port.title_en = title;
+                        port.desc_en = desc;
+                        port.tag_en = tag;
+                    }
+                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified portfolio item details [${id}]`);
                 }
             } else {
-                // Adding
+                const newId = `port-custom-${Date.now()}`;
                 const newPort = {
-                    id: `port-custom-${Date.now()}`,
+                    id: newId,
                     category: category,
-                    title: title,
-                    desc: desc,
                     img: img,
-                    tag: tag
+                    title_ar: currentLang === 'ar' ? title : "مشروع جديد",
+                    title_en: currentLang === 'en' ? title : "New Project",
+                    desc_ar: currentLang === 'ar' ? desc : "تطوير مخصص...",
+                    desc_en: currentLang === 'en' ? desc : "Custom details...",
+                    tag_ar: currentLang === 'ar' ? tag : "تطوير",
+                    tag_en: currentLang === 'en' ? tag : "Development"
                 };
                 draftState.portfolio.push(newPort);
                 pushToHistory(JSON.parse(JSON.stringify(draftState)), `Added new portfolio work: "${title}"`);
@@ -1435,7 +2203,7 @@ function wireEvents() {
         };
     }
 
-    // FAQ Form
+    // FAQ Adding / Editing
     const btnAddFaq = document.getElementById("btn-add-faq");
     const faqFormModal = document.getElementById("admin-faq-edit-modal");
     const faqFormClose = document.getElementById("admin-faq-form-close");
@@ -1443,7 +2211,7 @@ function wireEvents() {
 
     if (btnAddFaq) {
         btnAddFaq.onclick = () => {
-            document.getElementById("faq-modal-title").innerText = "Add FAQ Item";
+            document.getElementById("faq-modal-title").innerText = "إضافة سؤال فني جديد";
             document.getElementById("faq-form-id").value = "";
             faqForm.reset();
             faqFormModal.classList.add("active");
@@ -1460,20 +2228,22 @@ function wireEvents() {
 
             if (id) {
                 // Editing
-                const faq = draftState.faqs.find(x => x.id === id);
-                if (faq) {
-                    faq.question = question;
-                    faq.answer = answer;
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified FAQ item details [${id}]`);
-                }
+                const faqAr = draftState.ar.faqs.find(x => x.id === id);
+                if (faqAr && currentLang === 'ar') { faqAr.question = question; faqAr.answer = answer; }
+                
+                const faqEn = draftState.en.faqs.find(x => x.id === id);
+                if (faqEn && currentLang === 'en') { faqEn.question = question; faqEn.answer = answer; }
+
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified FAQ item details [${id}]`);
             } else {
                 // Adding
-                const newFaq = {
-                    id: `faq-custom-${Date.now()}`,
-                    question: question,
-                    answer: answer
-                };
-                draftState.faqs.push(newFaq);
+                const newId = `faq-custom-${Date.now()}`;
+                const newFaqAr = { id: newId, question: currentLang === 'ar' ? question : "سؤال جديد؟", answer: currentLang === 'ar' ? answer : "إجابة..." };
+                const newFaqEn = { id: newId, question: currentLang === 'en' ? question : "New Question?", answer: currentLang === 'en' ? answer : "Answer details..." };
+                
+                draftState.ar.faqs.push(newFaqAr);
+                draftState.en.faqs.push(newFaqEn);
+                
                 pushToHistory(JSON.parse(JSON.stringify(draftState)), `Added new FAQ question: "${question}"`);
             }
 
@@ -1484,11 +2254,12 @@ function wireEvents() {
         };
     }
 
-    // Manager tab switchers
+    // Modal tabs navigation
     document.querySelectorAll(".m-tab-btn").forEach(btn => {
         btn.onclick = () => {
-            document.querySelectorAll(".m-tab-btn").forEach(b => b.classList.remove("active"));
-            document.querySelectorAll(".m-tab-pane").forEach(p => p.classList.remove("active"));
+            const parent = btn.closest(".modal-body");
+            parent.querySelectorAll(".m-tab-btn").forEach(b => b.classList.remove("active"));
+            parent.querySelectorAll(".m-tab-pane").forEach(p => p.classList.remove("active"));
             
             btn.classList.add("active");
             const targetPane = btn.getAttribute("data-mtab");
@@ -1497,33 +2268,62 @@ function wireEvents() {
         };
     });
 
-    // Clear leads inbox button
+    // Clear Contact messages
     const btnClearLeads = document.getElementById("btn-clear-leads");
     if (btnClearLeads) {
         btnClearLeads.onclick = () => {
-            if (confirm("Are you sure you want to clear ALL inquiries? This action cannot be undone.")) {
+            if (confirm("هل تود بالتأكيد مسح جميع الرسائل الواردة؟")) {
                 leads = [];
                 localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
                 updateMsgCountBadge();
                 renderLeadsList();
-                addAuditLog("Cleared all message inquiry logs.");
+                addAuditLog("Cleared all inbound contact messages.");
             }
         };
     }
+
+    // Clear Purchase Requests
+    const btnClearOrders = document.getElementById("btn-clear-orders");
+    if (btnClearOrders) {
+        btnClearOrders.onclick = () => {
+            if (confirm("هل تود بالتأكيد حذف كافة طلبات الشراء الواردة نهائيًا؟")) {
+                orders = [];
+                localStorage.setItem("3m_studio_orders", JSON.stringify(orders));
+                renderOrdersList();
+                addAuditLog("Cleared all store order logs.");
+            }
+        };
+    }
+
+    // Order Search Input trigger
+    const orderSearch = document.getElementById("order-search-input");
+    if (orderSearch) {
+        orderSearch.oninput = () => {
+            renderOrdersList(orderSearch.value);
+        };
+    }
+
+    // Export CSV Order button
+    const btnExportCSV = document.getElementById("btn-export-orders-csv");
+    if (btnExportCSV) {
+        btnExportCSV.onclick = exportOrdersToCSV;
+    }
 }
 
-// --- Dynamic Services Table inside Products Catalog ---
+// --- Dynamic Services Table ---
 function renderServicesManagerTable() {
     const list = document.getElementById("services-manager-list");
     if (!list) return;
     list.innerHTML = "";
 
-    draftState.services.forEach(srv => {
+    const services = draftState[currentLang].services;
+
+    services.forEach(srv => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td><strong>${srv.name}</strong></td>
             <td><span class="table-badge">${srv.category}</span></td>
-            <td><code>${srv.price}</code></td>
+            <td><code>${srv.priceBase} USD</code></td>
             <td><span class="table-desc-preview" title="${srv.desc}">${srv.desc.substring(0, 45)}...</span></td>
             <td class="table-actions">
                 <button class="table-btn table-btn-edit btn-edit-srv" data-srv-id="${srv.id}">Edit</button>
@@ -1533,17 +2333,16 @@ function renderServicesManagerTable() {
         list.appendChild(tr);
     });
 
-    // Wire clicks
     list.querySelectorAll(".btn-edit-srv").forEach(btn => {
         btn.onclick = () => {
             const srvId = btn.getAttribute("data-srv-id");
-            const srv = draftState.services.find(x => x.id === srvId);
+            const srv = draftState[currentLang].services.find(x => x.id === srvId);
             if (srv) {
-                document.getElementById("service-modal-title").innerText = "Edit Service Offering Details";
+                document.getElementById("service-modal-title").innerText = "تعديل تفاصيل الخدمة";
                 document.getElementById("service-form-id").value = srv.id;
                 document.getElementById("service-form-name").value = srv.name;
                 document.getElementById("service-form-category").value = srv.category;
-                document.getElementById("service-form-price").value = srv.price;
+                document.getElementById("service-form-price").value = srv.priceBase;
                 document.getElementById("service-form-desc").value = srv.desc;
                 document.getElementById("service-form-features").value = srv.features.join("\n");
                 
@@ -1555,31 +2354,33 @@ function renderServicesManagerTable() {
     list.querySelectorAll(".btn-del-srv").forEach(btn => {
         btn.onclick = () => {
             const srvId = btn.getAttribute("data-srv-id");
-            if (confirm("Are you sure you want to delete this service card?")) {
-                const index = draftState.services.findIndex(x => x.id === srvId);
-                if (index > -1) {
-                    const deletedName = draftState.services[index].name;
-                    draftState.services.splice(index, 1);
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted service offering: "${deletedName}"`);
-                    applyState(draftState);
-                    renderServicesManagerTable();
-                    saveDraft();
-                }
+            if (confirm("هل تود بالتأكيد حذف هذه الخدمة نهائيًا؟")) {
+                const idxAr = draftState.ar.services.findIndex(x => x.id === srvId);
+                if (idxAr > -1) draftState.ar.services.splice(idxAr, 1);
+                
+                const idxEn = draftState.en.services.findIndex(x => x.id === srvId);
+                if (idxEn > -1) draftState.en.services.splice(idxEn, 1);
+
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted service offering catalog item [${srvId}]`);
+                applyState(draftState);
+                renderServicesManagerTable();
+                saveDraft();
             }
         };
     });
 }
 
-// --- Dynamic Portfolio Table inside Products Catalog ---
+// --- Dynamic Portfolio Table ---
 function renderPortfolioManagerTable() {
     const list = document.getElementById("portfolio-manager-list");
     if (!list) return;
     list.innerHTML = "";
 
     draftState.portfolio.forEach(item => {
+        const title = currentLang === 'ar' ? item.title_ar : item.title_en;
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td><strong>${item.title}</strong></td>
+            <td><strong>${title}</strong></td>
             <td><span class="table-badge">${item.category}</span></td>
             <td><code>${item.img.substring(0, 30)}...</code></td>
             <td class="table-actions">
@@ -1595,13 +2396,13 @@ function renderPortfolioManagerTable() {
             const portId = btn.getAttribute("data-port-id");
             const port = draftState.portfolio.find(x => x.id === portId);
             if (port) {
-                document.getElementById("portfolio-modal-title").innerText = "Edit Portfolio Work Details";
+                document.getElementById("portfolio-modal-title").innerText = "تعديل تفاصيل العمل الفني";
                 document.getElementById("portfolio-form-id").value = port.id;
-                document.getElementById("portfolio-form-title").value = port.title;
+                document.getElementById("portfolio-form-title").value = currentLang === 'ar' ? port.title_ar : port.title_en;
                 document.getElementById("portfolio-form-category").value = port.category;
-                document.getElementById("portfolio-form-desc").value = port.desc;
+                document.getElementById("portfolio-form-desc").value = currentLang === 'ar' ? port.desc_ar : port.desc_en;
                 document.getElementById("portfolio-form-image").value = port.img;
-                document.getElementById("portfolio-form-tag").value = port.tag;
+                document.getElementById("portfolio-form-tag").value = currentLang === 'ar' ? port.tag_ar : port.tag_en;
 
                 document.getElementById("admin-portfolio-edit-modal").classList.add("active");
             }
@@ -1611,12 +2412,12 @@ function renderPortfolioManagerTable() {
     list.querySelectorAll(".btn-del-port").forEach(btn => {
         btn.onclick = () => {
             const portId = btn.getAttribute("data-port-id");
-            if (confirm("Are you sure you want to delete this portfolio card?")) {
-                const index = draftState.portfolio.findIndex(x => x.id === portId);
-                if (index > -1) {
-                    const deletedTitle = draftState.portfolio[index].title;
-                    draftState.portfolio.splice(index, 1);
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted portfolio item: "${deletedTitle}"`);
+            if (confirm("هل تود بالتأكيد حذف هذا العمل الفني؟")) {
+                const idx = draftState.portfolio.findIndex(x => x.id === portId);
+                if (idx > -1) {
+                    const name = draftState.portfolio[idx].title_en;
+                    draftState.portfolio.splice(idx, 1);
+                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted portfolio work showcase item: "${name}"`);
                     applyState(draftState);
                     renderPortfolioManagerTable();
                     saveDraft();
@@ -1626,13 +2427,13 @@ function renderPortfolioManagerTable() {
     });
 }
 
-// --- Dynamic FAQ Table inside Products Catalog ---
+// --- Dynamic FAQ Table ---
 function renderFAQManagerTable() {
     const list = document.getElementById("faqs-manager-list");
     if (!list) return;
     list.innerHTML = "";
 
-    draftState.faqs.forEach(faq => {
+    draftState[currentLang].faqs.forEach(faq => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td><strong>${faq.question}</strong></td>
@@ -1648,9 +2449,9 @@ function renderFAQManagerTable() {
     list.querySelectorAll(".btn-edit-faq").forEach(btn => {
         btn.onclick = () => {
             const faqId = btn.getAttribute("data-faq-id");
-            const faq = draftState.faqs.find(x => x.id === faqId);
+            const faq = draftState[currentLang].faqs.find(x => x.id === faqId);
             if (faq) {
-                document.getElementById("faq-modal-title").innerText = "Edit FAQ Question & Answer";
+                document.getElementById("faq-modal-title").innerText = "تعديل السؤال والجواب";
                 document.getElementById("faq-form-id").value = faq.id;
                 document.getElementById("faq-form-question").value = faq.question;
                 document.getElementById("faq-form-answer").value = faq.answer;
@@ -1663,15 +2464,17 @@ function renderFAQManagerTable() {
     list.querySelectorAll(".btn-del-faq").forEach(btn => {
         btn.onclick = () => {
             const faqId = btn.getAttribute("data-faq-id");
-            if (confirm("Are you sure you want to delete this FAQ question?")) {
-                const index = draftState.faqs.findIndex(x => x.id === faqId);
-                if (index > -1) {
-                    draftState.faqs.splice(index, 1);
-                    pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted FAQ accordion item`);
-                    applyState(draftState);
-                    renderFAQManagerTable();
-                    saveDraft();
-                }
+            if (confirm("هل تود بالتأكيد حذف هذا السؤال؟")) {
+                const idxAr = draftState.ar.faqs.findIndex(x => x.id === faqId);
+                if (idxAr > -1) draftState.ar.faqs.splice(idxAr, 1);
+                
+                const idxEn = draftState.en.faqs.findIndex(x => x.id === faqId);
+                if (idxEn > -1) draftState.en.faqs.splice(idxEn, 1);
+
+                pushToHistory(JSON.parse(JSON.stringify(draftState)), `Deleted FAQ accordion item [${faqId}]`);
+                applyState(draftState);
+                renderFAQManagerTable();
+                saveDraft();
             }
         };
     });
@@ -1681,40 +2484,57 @@ function renderFAQManagerTable() {
 function renderLeadsList() {
     const container = document.getElementById("leads-list-container");
     const totalCount = document.getElementById("lead-stat-count");
-    const orderCount = document.getElementById("lead-stat-orders");
-    
     if (!container) return;
     
     totalCount.innerText = leads.length;
-    orderCount.innerText = Math.round(leads.length * 0.4); // Simulated Orders ratio
 
     if (leads.length === 0) {
-        container.innerHTML = `<div class="no-leads">No contact inquiries logged yet.</div>`;
+        container.innerHTML = `<div class="no-leads">لا يوجد رسائل تواصل معنا واردة حاليًا.</div>`;
         return;
     }
 
     container.innerHTML = leads.map(l => `
-        <div class="lead-card">
+        <div class="lead-card" data-lead-id="${l.id}">
             <div class="lead-card-header">
                 <div class="lead-name">
                     <h5>${l.name}</h5>
-                    <span class="lead-email">${l.email} | Received: ${l.timestamp}</span>
+                    <span class="lead-email">${l.email} | ديسكورد: ${l.discord} | التاريخ: ${l.timestamp}</span>
                 </div>
-                <div class="lead-tag">${l.service}</div>
+                <div class="lead-card-actions">
+                    <span class="lead-tag">${l.service}</span>
+                    <button class="table-btn table-btn-delete btn-del-lead" data-lead-id="${l.id}" style="padding:4px 8px;">حذف</button>
+                </div>
             </div>
             <p class="lead-message">"${l.message}"</p>
         </div>
     `).join("");
+
+    // Wire deletes
+    container.querySelectorAll(".btn-del-lead").forEach(btn => {
+        btn.onclick = () => {
+            const leadId = btn.getAttribute("data-lead-id");
+            if (confirm("هل تود بالتأكيد حذف هذه الرسالة نهائيًا؟")) {
+                const idx = leads.findIndex(x => x.id === leadId);
+                if (idx > -1) {
+                    leads.splice(idx, 1);
+                    localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
+                    renderLeadsList();
+                    updateMsgCountBadge();
+                    addAuditLog(`Deleted contact lead message [${leadId}]`);
+                }
+            }
+        };
+    });
 }
 
 function updateMsgCountBadge() {
     const countBadge = document.getElementById("tb-msg-count");
     if (countBadge) {
-        countBadge.innerText = leads.length;
+        countBadge.innerText = leads.length + orders.length; // Shows total pending inputs
     }
 }
 
-// --- Close modal triggers on clicking overlays ---
+// --- Close modal triggers on overlay click ---
 document.querySelectorAll(".modal-overlay").forEach(overlay => {
     overlay.onclick = (e) => {
         if (e.target === overlay) {
@@ -1757,7 +2577,7 @@ function initCounterAnimations() {
     if (statsSection) observer.observe(statsSection);
 }
 
-// --- Preloader Progress simulation ---
+// --- Preloader simulation ---
 function initPreloader() {
     const loader = document.getElementById("preloader");
     const bar = document.getElementById("loader-bar");
@@ -1794,7 +2614,7 @@ function initBackToTop() {
     };
 }
 
-// --- Custom Gaming Cursor Spark Trail (MouseMove Spark generation) ---
+// --- Custom Gaming Cursor Spark Trail ---
 function initCursorSparkTrail() {
     const cursor = document.getElementById("custom-cursor");
     const dot = document.getElementById("custom-cursor-dot");
@@ -1812,13 +2632,11 @@ function initCursorSparkTrail() {
         dot.style.left = cursorX + "px";
         dot.style.top = cursorY + "px";
 
-        // Spark Particle creation (throttled)
         if (Math.random() < 0.18) {
             createSpark(cursorX, cursorY);
         }
     });
 
-    // Inertia lag on outer cursor circle
     function animateCursor() {
         const dx = cursorX - dotX;
         const dy = cursorY - dotY;
@@ -1833,8 +2651,7 @@ function initCursorSparkTrail() {
     }
     animateCursor();
 
-    // Hover Scaling effect links
-    const interactiveSelectors = "a, button, input, textarea, select, .faq-header, .img-edit-overlay, .tab-btn, .filter-btn";
+    const interactiveSelectors = "a, button, input, textarea, select, .faq-header, .img-edit-overlay, .tab-btn, .filter-btn, .lang-toggle-btn, .currency-toggle-btn, .lang-option-btn, .currency-option-btn, .user-dropdown-btn";
     document.addEventListener("mouseover", (e) => {
         if (e.target.closest(interactiveSelectors)) {
             cursor.classList.add("cursor-hover");
@@ -1850,7 +2667,6 @@ function initCursorSparkTrail() {
         const spark = document.createElement("div");
         spark.className = "cursor-spark";
         
-        // Random drift coordinates
         const driftX = (Math.random() - 0.5) * 35;
         const driftY = (Math.random() - 0.5) * 35;
         
@@ -1859,7 +2675,6 @@ function initCursorSparkTrail() {
         spark.style.setProperty("--dx", `${driftX}px`);
         spark.style.setProperty("--dy", `${driftY}px`);
 
-        // Set color variants (blue, cyan, purple)
         const colors = ["#00f2fe", "#7f00ff", "#a855f7", "#ffffff"];
         spark.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         
@@ -1880,7 +2695,6 @@ function initChatbot() {
 
     let chatOpened = false;
 
-    // Toggle Chat Window
     trigger.onclick = () => {
         windowEl.classList.toggle("active");
         chatOpened = !chatOpened;
@@ -1900,26 +2714,34 @@ function initChatbot() {
         const txt = input.value.trim();
         if (!txt) return;
 
-        // User message UI bubble
         appendMessage(txt, "user");
         input.value = "";
         
-        // Auto scroll
         msgContainer.scrollTop = msgContainer.scrollHeight;
 
-        // Simulate Support Bot replies
         setTimeout(() => {
-            let replyText = "Thanks for your message! Our team is currently online. For custom inquiries, please submit our Contact Form or join our Discord server (discord.gg/3mstudio) for immediate support.";
+            let replyText = currentLang === 'ar' ? 
+                "شكراً لرسالتك! فريقنا الفني متصل حالياً ومستعد لخدمتك. لتقديم طلبات الشراء، يرجى ملء استمارة الطلب المخصصة للمنتج، أو تواصل معنا عبر سيرفر الديسكورد (discord.gg/3mstudio)." :
+                "Thanks for your message! Our tech team is online. For custom purchase inquiries, please use the buy button on service card, or join our Discord (discord.gg/3mstudio).";
+            
             const q = txt.toLowerCase();
             
-            if (q.includes("roblox")) {
-                replyText = "🎮 **Roblox Development** is our core specialty! We craft simulators, custom gameplay mechanics, data scripts, and responsive UIs. Our custom pricing starts at $99. Submit the form below for a quote.";
-            } else if (q.includes("discord") || q.includes("bot")) {
-                replyText = "🤖 **Discord Setups & Custom Bots** are delivered in 3-5 days. We implement verification panels, role systems, and Javascript custom API integrations starting at $49.";
-            } else if (q.includes("website") || q.includes("site") || q.includes("web")) {
-                replyText = "🌐 We design premium **Gaming and Business Websites** featuring custom landing pages, dashboards, and integrations. Mockups start at $129. Let us know your specifications!";
-            } else if (q.includes("price") || q.includes("cost") || q.includes("how much")) {
-                replyText = "💰 Our prices vary based on complexity. Standard Discord server setups start at $49, Discord bots at $149, Roblox systems at $99, and websites at $129. Custom quotes are free!";
+            if (q.includes("roblox") || q.includes("روبلوكس")) {
+                replyText = currentLang === 'ar' ?
+                    "🎮 **تطوير روبلوكس** هو تخصصنا الأساسي! نقوم بتطوير ألعاب كاملة، سكربتات مخصصة، أنظمة مقايضة، وواجهات مستخدم متكاملة. أسعارنا تبدأ من 99 دولار أمريكي." :
+                    "🎮 **Roblox Development** is our core specialty! We design maps, scripts, trade systems, and responsive UIs. Custom scripts start at $99 USD. Click 'Buy Now' to order.";
+            } else if (q.includes("discord") || q.includes("ديسكورد") || q.includes("bot") || q.includes("بوت")) {
+                replyText = currentLang === 'ar' ?
+                    "🤖 **سيرفرات وبوتات ديسكورد** نقوم بتصميمها بالكامل وتجهيز الغرف وأنظمة الرقابة والتحقق الأمنية المتقدمة. تبدأ أسعار السيرفرات من 49 دولار." :
+                    "🤖 **Discord setups & Custom Bots** are built in 3-5 days. We install captcha gates, ticket queues, and custom API bots starting at $49 USD.";
+            } else if (q.includes("website") || q.includes("موقع") || q.includes("ويب") || q.includes("web")) {
+                replyText = currentLang === 'ar' ?
+                    "🌐 نقوم بتصميم **مواقع ويب احترافية** تفاعلية مخصصة لمجتمعات الألعاب، صفحات الهبوط الشخصية، ولوحات تحكم اللاعبين الحية. تبدأ من 129 دولار." :
+                    "🌐 We build premium **Gaming Websites** featuring clan leaderboards, guild dashboards, and storefronts starting at $129 USD.";
+            } else if (q.includes("سعر") || q.includes("بكام") || q.includes("price") || q.includes("cost")) {
+                replyText = currentLang === 'ar' ?
+                    "💰 أسعارنا تنافسية للغاية: إعداد ديسكورد يبدأ من 49$، السكربتات من 99$، صفحات الهبوط من 129$، والألعاب المتكاملة من 499$. يمكنك تبديل العملة في الأعلى لمعرفة السعر بالجنيه أو اليورو." :
+                    "💰 Prices vary: Discord setup starts at $49, Roblox systems at $99, websites at $129, and full games at $499. Switch currency in navbar to see EGP/EUR rates.";
             }
 
             appendMessage(replyText, "bot");
@@ -1943,7 +2765,7 @@ function initChatbot() {
     }
 }
 
-// --- Main Window Load Entry Point ---
+// --- Main Entry point ---
 window.onload = () => {
     initPreloader();
     initStates();
