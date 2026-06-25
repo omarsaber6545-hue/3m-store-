@@ -395,7 +395,6 @@ function addAuditLog(msg, isError = false) {
 // --- SMTP Mail Simulator Outbox Logger ---
 function triggerSMTPSimulation(toEmail, subject, bodyContent) {
     const timestamp = new Date().toLocaleString();
-    const logMessage = `[SMTP ${timestamp}] To: ${toEmail} - Subject: ${subject} - Body Length: ${bodyContent.length} chars... SUCCESS (250 OK)`;
     
     // Save locally
     smtpLogs.unshift({ time: timestamp, to: toEmail, subject: subject, body: bodyContent });
@@ -650,7 +649,6 @@ function renderServices(servicesList) {
         grid.appendChild(card);
     });
 
-    // Wire Glowing border hover coordinates
     document.querySelectorAll(".service-card").forEach(card => {
         card.addEventListener("mousemove", e => {
             const rect = card.getBoundingClientRect();
@@ -661,7 +659,6 @@ function renderServices(servicesList) {
         });
     });
 
-    // Wire Purchase Request Modal trigger
     document.querySelectorAll(".btn-buy-now").forEach(btn => {
         btn.onclick = () => {
             const prodId = btn.getAttribute("data-product-id");
@@ -736,7 +733,6 @@ function renderFAQ(faqList) {
         accordion.appendChild(item);
     });
 
-    // Wire Toggles
     document.querySelectorAll(".faq-header").forEach(btn => {
         btn.onclick = () => {
             const item = btn.parentElement;
@@ -879,17 +875,12 @@ function disableContentEditable() {
 
 // --- Update draft state from text editor inputs ---
 function updateStateFromTextEdit(editId, newVal) {
-    // Determine language target
-    const isGlobal = !editId.startsWith("services.") && !editId.startsWith("faqs.") && !editId.startsWith("whyChooseUs.") && !editId.startsWith("testimonials.") && !editId.startsWith("portfolio.") && !editId.startsWith("statistics.");
-    
     if (editId.includes(".")) {
-        // Nested collection path: e.g. services.srv-roblox-1.name
         const parts = editId.split(".");
         if (parts.length === 3) {
             const [collection, itemId, field] = parts;
             
             if (collection === "portfolio" || collection === "statistics") {
-                // Portfolio and statistics are in root
                 const item = draftState[collection].find(x => x.id === itemId);
                 if (item && item[field] !== newVal) {
                     item[field] = newVal;
@@ -897,7 +888,6 @@ function updateStateFromTextEdit(editId, newVal) {
                     saveDraft();
                 }
             } else {
-                // Located inside language nodes: e.g. draftState.ar.services
                 const item = draftState[currentLang][collection].find(x => x.id === itemId);
                 if (item && item[field] !== newVal) {
                     item[field] = newVal;
@@ -907,7 +897,6 @@ function updateStateFromTextEdit(editId, newVal) {
             }
         }
     } else {
-        // Static text key inside language node
         const oldVal = draftState[currentLang].texts[editId];
         if (oldVal !== newVal) {
             draftState[currentLang].texts[editId] = newVal;
@@ -925,12 +914,12 @@ function saveDraft() {
     const statusText = document.getElementById("tb-save-status-text");
     
     if (statusOrb && statusText) {
-        statusOrb.style.backgroundColor = "#f59e0b"; // Orange (saving)
+        statusOrb.style.backgroundColor = "#f59e0b";
         statusText.innerText = "Saving draft...";
         
         if (autoSaveTimer) clearTimeout(autoSaveTimer);
         autoSaveTimer = setTimeout(() => {
-            statusOrb.style.backgroundColor = "#10b981"; // Green (saved)
+            statusOrb.style.backgroundColor = "#10b981";
             statusText.innerText = "Draft Synced";
         }, 1200);
     }
@@ -942,7 +931,6 @@ function enableAdminMode(showLogs = true) {
     sessionStorage.setItem("admin_logged_in", "true");
     document.body.classList.add("admin-edit-mode");
     
-    // Apply draft
     applyState(draftState);
 
     const toolbar = document.getElementById("admin-toolbar");
@@ -970,8 +958,6 @@ function disableAdminMode() {
     if (sidePanel) sidePanel.classList.remove("active");
 
     disableContentEditable();
-    
-    // Reload Live State to drop draft edits
     applyState(liveState);
     
     addAuditLog("Admin session terminated.");
@@ -1055,7 +1041,6 @@ function renderSidePanelSectionsList() {
         };
     });
 
-    // Wire Drag & Drop reordering in the sidebar
     let dragEl = null;
     listContainer.querySelectorAll(".section-list-item").forEach(item => {
         item.ondragstart = (e) => {
@@ -1129,7 +1114,6 @@ function updateLangUIIndicators() {
             `<span class="flag-icon">🇺🇸</span> <span class="lang-name">English</span>`;
     }
     
-    // Set active option in dropdown
     document.querySelectorAll(".lang-option-btn").forEach(btn => {
         btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
     });
@@ -1152,7 +1136,6 @@ function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("3m_studio_lang", currentLang);
 
-    // Apply translations
     updateLangUIIndicators();
     applyState(adminMode ? draftState : liveState);
     
@@ -1165,10 +1148,8 @@ function setCurrency(currency) {
     currentCurrency = currency;
     localStorage.setItem("3m_studio_currency", currentCurrency);
 
-    // Update UI
     updateCurrencyUIIndicators();
     
-    // Re-render services & prices
     const langDatabase = adminMode ? draftState[currentLang] : liveState[currentLang];
     renderServices(langDatabase.services);
 
@@ -1193,7 +1174,6 @@ function applyDiscordLoginState(user) {
         initialLabel.innerText = user.avatarLetter;
         authArea.classList.add("logged-in");
         
-        // If purchase form is open, autofill discord username
         const purchaseDiscord = document.getElementById("purchase-discord");
         if (purchaseDiscord) purchaseDiscord.value = user.username;
     }
@@ -1206,14 +1186,13 @@ function handleDiscordLogout() {
         authArea.classList.remove("logged-in");
     }
     
-    // Close user orders modal if open
     document.getElementById("user-orders-modal").classList.remove("active");
     addAuditLog("Discord account logged out.");
 }
 
 // --- Store Purchase Request modal handlers ---
 function openPurchaseModal(prodId) {
-    const srv = draftState[currentLang].services.find(x => x.id === prodId);
+    const srv = (adminMode ? draftState[currentLang] : liveState[currentLang]).services.find(x => x.id === prodId);
     if (!srv) return;
 
     const modal = document.getElementById("purchase-modal");
@@ -1233,7 +1212,6 @@ function openPurchaseModal(prodId) {
         title.setAttribute("data-target-prod-id", prodId);
         price.innerText = getFormattedPrice(srv.priceBase);
         
-        // Autofill discord tag if logged in
         const user = localStorage.getItem("discord_user");
         if (user) {
             discordInput.value = JSON.parse(user).username;
@@ -1241,7 +1219,6 @@ function openPurchaseModal(prodId) {
             discordInput.value = "";
         }
         
-        // Reset form view
         form.style.display = "flex";
         successMsg.classList.remove("active");
         
@@ -1291,16 +1268,12 @@ function renderOrdersList(filterQuery = "") {
         </div>
     `).join("");
 
-    // Wire status selector shifts
     container.querySelectorAll(".order-status-selector").forEach(sel => {
         sel.onchange = () => {
             const ordId = sel.getAttribute("data-ord-id");
             const newStatus = sel.value;
-            
-            // Update class
             sel.className = `order-status-selector ${newStatus}`;
             
-            // Update order object
             const ord = orders.find(x => x.id === ordId);
             if (ord) {
                 ord.status = newStatus;
@@ -1310,7 +1283,6 @@ function renderOrdersList(filterQuery = "") {
         };
     });
 
-    // Wire delete button clicks
     container.querySelectorAll(".btn-del-ord").forEach(btn => {
         btn.onclick = () => {
             const ordId = btn.getAttribute("data-ord-id");
@@ -1332,10 +1304,8 @@ function renderUserOrdersHistory(discordUsername) {
     const list = document.getElementById("user-orders-list");
     if (!list) return;
 
-    // Filter orders matching current username
     const userOrders = orders.filter(o => o.discord.toLowerCase() === discordUsername.toLowerCase());
 
-    const modalTitle = document.getElementById("user-orders-modal-title");
     const avatarLarge = document.getElementById("user-orders-avatar");
     const usernameLabel = document.getElementById("user-orders-username");
 
@@ -1375,10 +1345,7 @@ function exportOrdersToCSV() {
         return;
     }
 
-    // Define CSV Headers
     const headers = ["Order ID", "Customer Name", "Email Address", "Discord Username", "Service Title", "Amount Paid", "Order Status", "Timestamp"];
-    
-    // Map rows
     const rows = orders.map(o => [
         o.id,
         o.name.replace(/,/g, ' '),
@@ -1390,13 +1357,11 @@ function exportOrdersToCSV() {
         o.timestamp
     ]);
 
-    // Build CSV string
     const csvContent = [
         headers.join(","),
         ...rows.map(r => r.join(","))
     ].join("\n");
 
-    // Add Unicode BOM for Excel Arabic layout compatibility
     const BOM = "\uFEFF";
     const blob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -1413,7 +1378,6 @@ function exportOrdersToCSV() {
 
 // --- Wire all UI interactive events ---
 function wireEvents() {
-    // 1. Language Dropdown switcher clicks
     const langBtn = document.getElementById("lang-toggle-btn");
     const langDropdown = document.getElementById("lang-dropdown");
     if (langBtn && langDropdown) {
@@ -1432,7 +1396,6 @@ function wireEvents() {
         });
     }
 
-    // 2. Currency Dropdown switcher clicks
     const currBtn = document.getElementById("currency-toggle-btn");
     const currDropdown = document.getElementById("currency-dropdown");
     if (currBtn && currDropdown) {
@@ -1451,13 +1414,11 @@ function wireEvents() {
         });
     }
 
-    // Click outside switches close dropdowns
     document.addEventListener("click", () => {
         if (langDropdown) langDropdown.classList.remove("active");
         if (currDropdown) currDropdown.classList.remove("active");
     });
 
-    // 3. Discord Mock popup events
     const discordLoginBtn = document.getElementById("discord-login-btn");
     const discordAuthModal = document.getElementById("discord-auth-modal");
     const discordCancel = document.getElementById("discord-oauth-cancel");
@@ -1478,7 +1439,6 @@ function wireEvents() {
                 avatarLetter: inputName.charAt(0).toUpperCase()
             };
             
-            // Save locally
             localStorage.setItem("discord_user", JSON.stringify(mockUser));
             applyDiscordLoginState(mockUser);
             
@@ -1487,13 +1447,11 @@ function wireEvents() {
         };
     }
 
-    // Discord logout click
     const btnLogout = document.getElementById("btn-discord-logout");
     if (btnLogout) {
         btnLogout.onclick = handleDiscordLogout;
     }
 
-    // Show orders history modal
     const btnHistory = document.getElementById("btn-show-orders-history");
     const userOrdersModal = document.getElementById("user-orders-modal");
     const userOrdersClose = document.getElementById("user-orders-close");
@@ -1512,7 +1470,6 @@ function wireEvents() {
         userOrdersClose.onclick = () => userOrdersModal.classList.remove("active");
     }
 
-    // 4. Contact Form leads handler
     const contactForm = document.getElementById("contact-form");
     const successMsg = document.getElementById("form-success-msg");
     const resetFormBtn = document.getElementById("form-reset-btn");
@@ -1535,8 +1492,6 @@ function wireEvents() {
             localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
             updateMsgCountBadge();
 
-            // SMTP SIMULATION (Email logs)
-            // 1. Notification to Admin
             const adminEmailBody = `
                 New Contact Form Inquiry!
                 ------------------------
@@ -1549,7 +1504,6 @@ function wireEvents() {
             `;
             triggerSMTPSimulation("omarsaber6545@gmail.com", `Inquiry: ${newLead.service} - ${newLead.name}`, adminEmailBody);
             
-            // 2. Receipt confirmation to client
             const clientEmailBody = `
                 Dear ${newLead.name},
                 
@@ -1577,7 +1531,6 @@ function wireEvents() {
         }
     }
 
-    // 5. Purchase request form submissions
     const purchaseModal = document.getElementById("purchase-modal");
     const purchaseClose = document.getElementById("purchase-modal-close");
     const purchaseForm = document.getElementById("purchase-request-form");
@@ -1614,8 +1567,6 @@ function wireEvents() {
             orders.unshift(newOrder);
             localStorage.setItem("3m_studio_orders", JSON.stringify(orders));
 
-            // SMTP SIMULATION (Email logs)
-            // 1. Notification to Admin
             const adminOrderBody = `
                 Urgent: New Purchase Request ${orderId}!
                 --------------------------------------
@@ -1629,7 +1580,6 @@ function wireEvents() {
             `;
             triggerSMTPSimulation("omarsaber6545@gmail.com", `Order Alert ${orderId} - ${newOrder.service}`, adminOrderBody);
             
-            // 2. Confirmation to Customer
             const clientOrderBody = `
                 Dear ${newOrder.name},
                 
@@ -1647,7 +1597,6 @@ function wireEvents() {
 
             addAuditLog(`Purchase Request order created: [${orderId}] for ${newOrder.service}`);
 
-            // Show success screen with Order ID
             document.getElementById("purchase-order-id").innerText = orderId;
             purchaseForm.style.display = "none";
             purchaseSuccess.classList.add("active");
@@ -1658,7 +1607,6 @@ function wireEvents() {
         }
     }
 
-    // 6. Search Bar & Admin auth triggers
     const searchBar = document.getElementById("search-bar");
     const searchBtn = document.getElementById("search-btn");
     const searchDropdown = document.getElementById("search-results-dropdown");
@@ -1690,7 +1638,6 @@ function wireEvents() {
                     passwordInput.focus();
                 }
             } else if (val.length >= 2) {
-                // Search services matching query
                 const langDatabase = draftState[currentLang] || draftState["ar"];
                 const matches = langDatabase.services.filter(s => 
                     s.name.toLowerCase().includes(val) || 
@@ -1726,7 +1673,6 @@ function wireEvents() {
         };
     }
 
-    // 7. Admin auth submissions
     const modalLogin = document.getElementById("admin-login-modal");
     const closeLogin = document.getElementById("admin-login-close");
     const submitLogin = document.getElementById("admin-login-submit");
@@ -1754,17 +1700,15 @@ function wireEvents() {
         };
     }
 
-    // 8. Navbar Scroll Reactions
-    const header = document.getElementById("main-header");
+    const headerEl = document.getElementById("main-header");
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
-            header.classList.add("scrolled");
+            headerEl.classList.add("scrolled");
         } else {
-            header.classList.remove("scrolled");
+            headerEl.classList.remove("scrolled");
         }
     });
 
-    // Mobile Hamburger drawer toggles
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
     if (hamburger && navMenu) {
@@ -1780,7 +1724,6 @@ function wireEvents() {
         });
     }
 
-    // Tabs switchers
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
@@ -1793,7 +1736,6 @@ function wireEvents() {
         };
     });
 
-    // Portfolio filters
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.onclick = () => {
             document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -1812,7 +1754,6 @@ function wireEvents() {
         };
     });
 
-    // 9. Toolbar action handlers
     const tbUndo = document.getElementById("tb-undo");
     const tbRedo = document.getElementById("tb-redo");
     const tbText = document.getElementById("tb-toggle-text");
@@ -1973,7 +1914,6 @@ function wireEvents() {
         };
     }
 
-    // 10. Theme Colors modifiers
     const colorPrimary = document.getElementById("color-primary");
     const textPrimary = document.getElementById("color-primary-text");
     const colorSecondary = document.getElementById("color-secondary");
@@ -2013,7 +1953,6 @@ function wireEvents() {
         colorBg.onchange = () => pushToHistory(JSON.parse(JSON.stringify(draftState)), `Theme background color changed to ${colorBg.value}`);
     }
 
-    // 11. Image Asset submission in Modal
     const imgModal = document.getElementById("admin-image-modal");
     const imgClose = document.getElementById("admin-image-close");
     const imgSubmit = document.getElementById("admin-image-submit");
@@ -2069,8 +2008,6 @@ function wireEvents() {
         };
     }
 
-    // 12. Manager Catalog forms
-    // Services Adding / Editing
     const btnAddService = document.getElementById("btn-add-service");
     const serviceFormModal = document.getElementById("admin-service-edit-modal");
     const serviceFormClose = document.getElementById("admin-service-form-close");
@@ -2097,7 +2034,6 @@ function wireEvents() {
             const features = document.getElementById("service-form-features").value.trim().split("\n").map(f => f.trim()).filter(Boolean);
 
             if (id) {
-                // Editing (Apply to both Arabic & English for consistency, translation placeholders used)
                 const srvAr = draftState.ar.services.find(x => x.id === id);
                 if (srvAr) {
                     srvAr.category = category;
@@ -2116,12 +2052,9 @@ function wireEvents() {
                 }
                 pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified service item base properties [${id}]`);
             } else {
-                // Adding new product
                 const newId = `srv-custom-${Date.now()}`;
-                
-                // Add default placeholders for both langs
                 const newSrvAr = { id: newId, category: category, name: name, priceBase: priceVal, desc: desc, features: features };
-                const newSrvEn = { id: newId, category: category, name: name, priceBase: priceVal, desc: desc, features: features }; // Prefills with input
+                const newSrvEn = { id: newId, category: category, name: name, priceBase: priceVal, desc: desc, features: features };
                 
                 draftState.ar.services.push(newSrvAr);
                 draftState.en.services.push(newSrvEn);
@@ -2136,7 +2069,6 @@ function wireEvents() {
         };
     }
 
-    // Portfolio Adding / Editing
     const btnAddPortfolio = document.getElementById("btn-add-portfolio");
     const portfolioFormModal = document.getElementById("admin-portfolio-edit-modal");
     const portfolioFormClose = document.getElementById("admin-portfolio-form-close");
@@ -2203,7 +2135,6 @@ function wireEvents() {
         };
     }
 
-    // FAQ Adding / Editing
     const btnAddFaq = document.getElementById("btn-add-faq");
     const faqFormModal = document.getElementById("admin-faq-edit-modal");
     const faqFormClose = document.getElementById("admin-faq-form-close");
@@ -2227,7 +2158,6 @@ function wireEvents() {
             const answer = document.getElementById("faq-form-answer").value.trim();
 
             if (id) {
-                // Editing
                 const faqAr = draftState.ar.faqs.find(x => x.id === id);
                 if (faqAr && currentLang === 'ar') { faqAr.question = question; faqAr.answer = answer; }
                 
@@ -2236,7 +2166,6 @@ function wireEvents() {
 
                 pushToHistory(JSON.parse(JSON.stringify(draftState)), `Modified FAQ item details [${id}]`);
             } else {
-                // Adding
                 const newId = `faq-custom-${Date.now()}`;
                 const newFaqAr = { id: newId, question: currentLang === 'ar' ? question : "سؤال جديد؟", answer: currentLang === 'ar' ? answer : "إجابة..." };
                 const newFaqEn = { id: newId, question: currentLang === 'en' ? question : "New Question?", answer: currentLang === 'en' ? answer : "Answer details..." };
@@ -2254,7 +2183,6 @@ function wireEvents() {
         };
     }
 
-    // Modal tabs navigation
     document.querySelectorAll(".m-tab-btn").forEach(btn => {
         btn.onclick = () => {
             const parent = btn.closest(".modal-body");
@@ -2268,7 +2196,6 @@ function wireEvents() {
         };
     });
 
-    // Clear Contact messages
     const btnClearLeads = document.getElementById("btn-clear-leads");
     if (btnClearLeads) {
         btnClearLeads.onclick = () => {
@@ -2282,7 +2209,6 @@ function wireEvents() {
         };
     }
 
-    // Clear Purchase Requests
     const btnClearOrders = document.getElementById("btn-clear-orders");
     if (btnClearOrders) {
         btnClearOrders.onclick = () => {
@@ -2295,7 +2221,6 @@ function wireEvents() {
         };
     }
 
-    // Order Search Input trigger
     const orderSearch = document.getElementById("order-search-input");
     if (orderSearch) {
         orderSearch.oninput = () => {
@@ -2303,7 +2228,6 @@ function wireEvents() {
         };
     }
 
-    // Export CSV Order button
     const btnExportCSV = document.getElementById("btn-export-orders-csv");
     if (btnExportCSV) {
         btnExportCSV.onclick = exportOrdersToCSV;
@@ -2480,16 +2404,13 @@ function renderFAQManagerTable() {
     });
 }
 
-// --- Populate Customer Leads list ---
+// --- Render Inbound Customer Leads List ---
 function renderLeadsList() {
     const container = document.getElementById("leads-list-container");
-    const totalCount = document.getElementById("lead-stat-count");
     if (!container) return;
-    
-    totalCount.innerText = leads.length;
 
     if (leads.length === 0) {
-        container.innerHTML = `<div class="no-leads">لا يوجد رسائل تواصل معنا واردة حاليًا.</div>`;
+        container.innerHTML = `<div class="no-leads">${currentLang === 'ar' ? 'لا يوجد رسائل واردة حاليًا.' : 'No incoming messages currently.'}</div>`;
         return;
     }
 
@@ -2502,276 +2423,263 @@ function renderLeadsList() {
                 </div>
                 <div class="lead-card-actions">
                     <span class="lead-tag">${l.service}</span>
-                    <button class="table-btn table-btn-delete btn-del-lead" data-lead-id="${l.id}" style="padding:4px 8px;">حذف</button>
+                    <button class="table-btn table-btn-delete btn-del-lead" data-lead-id="${l.id}" style="padding:4px 8px;">${currentLang === 'ar' ? 'حذف' : 'Delete'}</button>
                 </div>
             </div>
             <p class="lead-message">"${l.message}"</p>
         </div>
     `).join("");
 
-    // Wire deletes
     container.querySelectorAll(".btn-del-lead").forEach(btn => {
         btn.onclick = () => {
             const leadId = btn.getAttribute("data-lead-id");
-            if (confirm("هل تود بالتأكيد حذف هذه الرسالة نهائيًا؟")) {
+            if (confirm(currentLang === 'ar' ? "هل أنت متأكد من رغبتك بحذف هذه الرسالة؟" : "Are you sure you want to delete this message?")) {
                 const idx = leads.findIndex(x => x.id === leadId);
                 if (idx > -1) {
                     leads.splice(idx, 1);
                     localStorage.setItem("3m_studio_leads", JSON.stringify(leads));
                     renderLeadsList();
                     updateMsgCountBadge();
-                    addAuditLog(`Deleted contact lead message [${leadId}]`);
+                    addAuditLog(`Deleted contact lead [${leadId}]`);
                 }
             }
         };
     });
 }
 
+// --- Update Message Count Badge & Stats Orb Counters ---
 function updateMsgCountBadge() {
-    const countBadge = document.getElementById("tb-msg-count");
-    if (countBadge) {
-        countBadge.innerText = leads.length + orders.length; // Shows total pending inputs
+    const badge = document.getElementById("tb-msg-count");
+    if (badge) {
+        badge.innerText = leads.length + orders.length;
+    }
+    const leadCountEl = document.getElementById("lead-stat-count");
+    if (leadCountEl) {
+        leadCountEl.innerText = leads.length;
+    }
+    const orderCountEl = document.getElementById("lead-stat-orders");
+    if (orderCountEl) {
+        orderCountEl.innerText = orders.length;
     }
 }
 
-// --- Close modal triggers on overlay click ---
-document.querySelectorAll(".modal-overlay").forEach(overlay => {
-    overlay.onclick = (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove("active");
+// --- Preloader & Initialization Sequence ---
+function runPreloader() {
+    const preloader = document.getElementById("preloader");
+    const loaderBar = document.getElementById("loader-bar");
+    const loaderPct = document.getElementById("loader-percentage");
+    
+    if (!preloader) {
+        initStates();
+        wireEvents();
+        return;
+    }
+    
+    let percentage = 0;
+    const interval = setInterval(() => {
+        percentage += Math.floor(Math.random() * 8) + 2;
+        if (percentage >= 100) {
+            percentage = 100;
+            clearInterval(interval);
+            
+            // Trigger initialization
+            initStates();
+            wireEvents();
+            setupCustomCursor();
+            setupLiveChatBot();
+            setupBackToTop();
+            
+            // Fade out preloader
+            preloader.classList.add("fade-out");
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 600);
+        }
+        
+        if (loaderBar) loaderBar.style.width = `${percentage}%`;
+        if (loaderPct) loaderPct.innerText = `${percentage}%`;
+    }, 40);
+}
+
+// --- Custom Cursor & Gaming Particle Trail ---
+function setupCustomCursor() {
+    const cursor = document.getElementById("custom-cursor");
+    const dot = document.getElementById("custom-cursor-dot");
+    const sparkContainer = document.getElementById("spark-container");
+    
+    if (!cursor || !dot) return;
+    
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+        dot.style.left = `${e.clientX}px`;
+        dot.style.top = `${e.clientY}px`;
+        
+        if (Math.random() < 0.25) {
+            createSpark(e.clientX, e.clientY);
+        }
+    });
+    
+    const hoverables = "a, button, .service-card, .portfolio-item, .faq-header, select, input, textarea, [contenteditable='true']";
+    
+    document.addEventListener("mouseover", (e) => {
+        if (e.target.closest(hoverables)) {
+            cursor.classList.add("cursor-hover");
+            dot.style.transform = "translate(-50%, -50%) scale(1.5)";
+        }
+    });
+    
+    document.addEventListener("mouseout", (e) => {
+        if (e.target.closest(hoverables)) {
+            cursor.classList.remove("cursor-hover");
+            dot.style.transform = "translate(-50%, -50%) scale(1)";
+        }
+    });
+    
+    function createSpark(x, y) {
+        if (!sparkContainer) return;
+        const spark = document.createElement("div");
+        spark.className = "cursor-spark";
+        
+        const size = Math.random() * 6 + 4;
+        const color = Math.random() > 0.5 ? "var(--primary-color)" : "var(--secondary-color)";
+        
+        spark.style.width = `${size}px`;
+        spark.style.height = `${size}px`;
+        spark.style.backgroundColor = color;
+        spark.style.boxShadow = `0 0 8px ${color}`;
+        spark.style.left = `${x}px`;
+        spark.style.top = `${y}px`;
+        
+        sparkContainer.appendChild(spark);
+        
+        setTimeout(() => {
+            spark.remove();
+        }, 600);
+    }
+}
+
+// --- Live Support Chat Widget Widget Engine ---
+function setupLiveChatBot() {
+    const trigger = document.getElementById("chat-trigger");
+    const windowEl = document.getElementById("chat-window");
+    const closeBtn = document.getElementById("chat-close");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+    const chatMessages = document.getElementById("chat-messages");
+    const chatBadge = document.getElementById("chat-badge");
+    
+    if (!trigger || !windowEl || !closeBtn || !chatInput || !chatSend || !chatMessages) return;
+    
+    trigger.onclick = () => {
+        windowEl.classList.toggle("active");
+        if (windowEl.classList.contains("active")) {
+            if (chatBadge) chatBadge.style.display = "none";
+            chatInput.focus();
         }
     };
-});
-
-// --- Scroll Counters Animations ---
-function initCounterAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const stats = entry.target.querySelectorAll(".stat-number");
-                stats.forEach(stat => {
-                    const target = parseInt(stat.getAttribute("data-stat-target"));
-                    const countEl = stat.querySelector(".count-val");
-                    let current = 0;
-                    const duration = 1500;
-                    const steps = 60;
-                    const increment = target / steps;
-                    const stepTime = duration / steps;
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            countEl.innerText = target;
-                            clearInterval(timer);
-                        } else {
-                            countEl.innerText = Math.round(current);
-                        }
-                    }, stepTime);
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    const statsSection = document.getElementById("statistics");
-    if (statsSection) observer.observe(statsSection);
-}
-
-// --- Preloader simulation ---
-function initPreloader() {
-    const loader = document.getElementById("preloader");
-    const bar = document.getElementById("loader-bar");
-    const pct = document.getElementById("loader-percentage");
     
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 15) + 5;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            setTimeout(() => {
-                loader.classList.add("fade-out");
-            }, 400);
+    closeBtn.onclick = () => {
+        windowEl.classList.remove("active");
+    };
+    
+    const sendMessage = () => {
+        const text = chatInput.value.trim();
+        if (!text) return;
+        
+        appendMessage(text, "user");
+        chatInput.value = "";
+        
+        setTimeout(() => {
+            const botReply = getBotResponse(text);
+            appendMessage(botReply, "bot");
+        }, 1000);
+    };
+    
+    chatSend.onclick = sendMessage;
+    chatInput.onkeydown = (e) => {
+        if (e.key === "Enter") sendMessage();
+    };
+    
+    function appendMessage(text, sender) {
+        const msg = document.createElement("div");
+        msg.className = `message ${sender}`;
+        
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        msg.innerHTML = `
+            <div class="message-content">${escapeHTML(text)}</div>
+            <div class="message-time">${timeStr}</div>
+        `;
+        
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function escapeHTML(str) {
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    
+    function getBotResponse(userText) {
+        const txt = userText.toLowerCase();
+        
+        if (currentLang === "ar") {
+            if (txt.includes("روبلوكس") || txt.includes("roblox") || txt.includes("لعب")) {
+                return "نقوم بتصميم وتطوير ألعاب روبلوكس كاملة، برمجة سكربتات وأنظمة متطورة، بناء خرائط وتصميم واجهات مستخدم متجاوبة.";
+            }
+            if (txt.includes("ديسكورد") || txt.includes("discord") || txt.includes("بوت")) {
+                return "نقدم خدمات إعداد وتصميم سيرفرات ديسكورد احترافية، برمجة بوتات خاصة بربط قواعد البيانات، وأنظمة تذاكر ودعم فني بالأزرار.";
+            }
+            if (txt.includes("سعر") || txt.includes("أسعار") || txt.includes("بكم") || txt.includes("كم")) {
+                return "تتفاوت الأسعار حسب المتطلبات المخصصة. يمكنك الاطلاع على الأسعار الأساسية للخدمات في بطاقات الخدمات وتغيير العملة من الأعلى.";
+            }
+            if (txt.includes("موقع") || txt.includes("برمجة") || txt.includes("ويب")) {
+                return "نقوم بتطوير مواقع مجتمعات الألعاب، صفحات الهبوط، ولوحات التحكم المخصصة لربط قواعد بيانات الألعاب مباشرة.";
+            }
+            return "شكرًا لتواصلك معنا! يمكنك أيضًا ملء نموذج 'اتصل بنا' في أسفل الصفحة أو الانضمام لسيرفر الديسكورد للتحدث مع أحد مطورينا مباشرة.";
+        } else {
+            if (txt.includes("roblox") || txt.includes("game")) {
+                return "We design and develop full Roblox games, custom scripting systems, high-quality maps, and responsive user interfaces.";
+            }
+            if (txt.includes("discord") || txt.includes("bot")) {
+                return "We offer professional Discord server configurations, custom bot development with database integrations, and ticket verification systems.";
+            }
+            if (txt.includes("price") || txt.includes("cost") || txt.includes("how much")) {
+                return "Pricing varies by scope. You can review the base rates directly on the service cards, and convert them to your currency of choice using the switcher.";
+            }
+            if (txt.includes("website") || txt.includes("web") || txt.includes("dev")) {
+                return "We build gaming community portals, custom portfolios, and advanced administrative control dashboards.";
+            }
+            return "Thank you for reaching out! You can also fill the contact form at the bottom or join our Discord server to speak with a project manager directly.";
         }
-        bar.style.width = progress + "%";
-        pct.innerText = progress + "%";
-    }, 80);
+    }
 }
 
-// --- Back to Top Trigger Button ---
-function initBackToTop() {
+// --- Back to Top Smooth Scroll ---
+function setupBackToTop() {
     const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+    
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
+        if (window.scrollY > 300) {
             btn.classList.add("visible");
         } else {
             btn.classList.remove("visible");
         }
     });
-
+    
     btn.onclick = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     };
 }
 
-// --- Custom Gaming Cursor Spark Trail ---
-function initCursorSparkTrail() {
-    const cursor = document.getElementById("custom-cursor");
-    const dot = document.getElementById("custom-cursor-dot");
-    const container = document.getElementById("spark-container");
-    
-    if (!cursor || !dot) return;
-
-    let cursorX = 0, cursorY = 0;
-    let dotX = 0, dotY = 0;
-    
-    document.addEventListener("mousemove", (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-        
-        dot.style.left = cursorX + "px";
-        dot.style.top = cursorY + "px";
-
-        if (Math.random() < 0.18) {
-            createSpark(cursorX, cursorY);
-        }
-    });
-
-    function animateCursor() {
-        const dx = cursorX - dotX;
-        const dy = cursorY - dotY;
-        
-        dotX += dx * 0.15;
-        dotY += dy * 0.15;
-        
-        cursor.style.left = dotX + "px";
-        cursor.style.top = dotY + "px";
-        
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    const interactiveSelectors = "a, button, input, textarea, select, .faq-header, .img-edit-overlay, .tab-btn, .filter-btn, .lang-toggle-btn, .currency-toggle-btn, .lang-option-btn, .currency-option-btn, .user-dropdown-btn";
-    document.addEventListener("mouseover", (e) => {
-        if (e.target.closest(interactiveSelectors)) {
-            cursor.classList.add("cursor-hover");
-        }
-    });
-    document.addEventListener("mouseout", (e) => {
-        if (!e.target.closest(interactiveSelectors)) {
-            cursor.classList.remove("cursor-hover");
-        }
-    });
-
-    function createSpark(x, y) {
-        const spark = document.createElement("div");
-        spark.className = "cursor-spark";
-        
-        const driftX = (Math.random() - 0.5) * 35;
-        const driftY = (Math.random() - 0.5) * 35;
-        
-        spark.style.left = x + "px";
-        spark.style.top = y + "px";
-        spark.style.setProperty("--dx", `${driftX}px`);
-        spark.style.setProperty("--dy", `${driftY}px`);
-
-        const colors = ["#00f2fe", "#7f00ff", "#a855f7", "#ffffff"];
-        spark.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        
-        container.appendChild(spark);
-        setTimeout(() => spark.remove(), 600);
-    }
+// --- Startup Launcher ---
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runPreloader);
+} else {
+    runPreloader();
 }
-
-// --- Live Chat Bot Widget Simulator ---
-function initChatbot() {
-    const trigger = document.getElementById("chat-trigger");
-    const windowEl = document.getElementById("chat-window");
-    const close = document.getElementById("chat-close");
-    const input = document.getElementById("chat-input");
-    const send = document.getElementById("chat-send");
-    const msgContainer = document.getElementById("chat-messages");
-    const badge = document.getElementById("chat-badge");
-
-    let chatOpened = false;
-
-    trigger.onclick = () => {
-        windowEl.classList.toggle("active");
-        chatOpened = !chatOpened;
-        if (chatOpened) {
-            badge.style.display = "none";
-            setTimeout(() => input.focus(), 300);
-        }
-    };
-
-    close.onclick = (e) => {
-        e.stopPropagation();
-        windowEl.classList.remove("active");
-        chatOpened = false;
-    };
-
-    const handleSendMessage = () => {
-        const txt = input.value.trim();
-        if (!txt) return;
-
-        appendMessage(txt, "user");
-        input.value = "";
-        
-        msgContainer.scrollTop = msgContainer.scrollHeight;
-
-        setTimeout(() => {
-            let replyText = currentLang === 'ar' ? 
-                "شكراً لرسالتك! فريقنا الفني متصل حالياً ومستعد لخدمتك. لتقديم طلبات الشراء، يرجى ملء استمارة الطلب المخصصة للمنتج، أو تواصل معنا عبر سيرفر الديسكورد (discord.gg/3mstudio)." :
-                "Thanks for your message! Our tech team is online. For custom purchase inquiries, please use the buy button on service card, or join our Discord (discord.gg/3mstudio).";
-            
-            const q = txt.toLowerCase();
-            
-            if (q.includes("roblox") || q.includes("روبلوكس")) {
-                replyText = currentLang === 'ar' ?
-                    "🎮 **تطوير روبلوكس** هو تخصصنا الأساسي! نقوم بتطوير ألعاب كاملة، سكربتات مخصصة، أنظمة مقايضة، وواجهات مستخدم متكاملة. أسعارنا تبدأ من 99 دولار أمريكي." :
-                    "🎮 **Roblox Development** is our core specialty! We design maps, scripts, trade systems, and responsive UIs. Custom scripts start at $99 USD. Click 'Buy Now' to order.";
-            } else if (q.includes("discord") || q.includes("ديسكورد") || q.includes("bot") || q.includes("بوت")) {
-                replyText = currentLang === 'ar' ?
-                    "🤖 **سيرفرات وبوتات ديسكورد** نقوم بتصميمها بالكامل وتجهيز الغرف وأنظمة الرقابة والتحقق الأمنية المتقدمة. تبدأ أسعار السيرفرات من 49 دولار." :
-                    "🤖 **Discord setups & Custom Bots** are built in 3-5 days. We install captcha gates, ticket queues, and custom API bots starting at $49 USD.";
-            } else if (q.includes("website") || q.includes("موقع") || q.includes("ويب") || q.includes("web")) {
-                replyText = currentLang === 'ar' ?
-                    "🌐 نقوم بتصميم **مواقع ويب احترافية** تفاعلية مخصصة لمجتمعات الألعاب، صفحات الهبوط الشخصية، ولوحات تحكم اللاعبين الحية. تبدأ من 129 دولار." :
-                    "🌐 We build premium **Gaming Websites** featuring clan leaderboards, guild dashboards, and storefronts starting at $129 USD.";
-            } else if (q.includes("سعر") || q.includes("بكام") || q.includes("price") || q.includes("cost")) {
-                replyText = currentLang === 'ar' ?
-                    "💰 أسعارنا تنافسية للغاية: إعداد ديسكورد يبدأ من 49$، السكربتات من 99$، صفحات الهبوط من 129$، والألعاب المتكاملة من 499$. يمكنك تبديل العملة في الأعلى لمعرفة السعر بالجنيه أو اليورو." :
-                    "💰 Prices vary: Discord setup starts at $49, Roblox systems at $99, websites at $129, and full games at $499. Switch currency in navbar to see EGP/EUR rates.";
-            }
-
-            appendMessage(replyText, "bot");
-            msgContainer.scrollTop = msgContainer.scrollHeight;
-        }, 1000);
-    };
-
-    send.onclick = handleSendMessage;
-    input.onkeydown = (e) => {
-        if (e.key === "Enter") handleSendMessage();
-    };
-
-    function appendMessage(text, sender) {
-        const bubble = document.createElement("div");
-        bubble.className = `message ${sender}`;
-        bubble.innerHTML = `
-            <div class="message-content">${text}</div>
-            <div class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
-        `;
-        msgContainer.appendChild(bubble);
-    }
-}
-
-// --- Main Entry point ---
-window.onload = () => {
-    initPreloader();
-    initStates();
-    wireEvents();
-    initBackToTop();
-    initCounterAnimations();
-    initCursorSparkTrail();
-    initChatbot();
-};
